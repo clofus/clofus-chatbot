@@ -1,0 +1,17 @@
+{
+  "name": "chatbot_ui",
+  "version": "1.0.0",
+  "description": "Chatbot ui for Rasa NLU/Core",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Ashwin",
+  "license": "ISC",
+  "dependencies": {
+    "bootstrap-vue": "^2.0.0-rc.9",
+    "express": "^4.16.3",
+    "vue": "^2.5.16",
+    "vue-router": "^3.0.1"
+  }
+}

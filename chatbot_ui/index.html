@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Clofus Bot dashboard</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+    <link rel='stylesheet prefetch' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css'>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/animate.css">
+    <link rel="stylesheet" href="./css/notify.min.css">
+</head>
+
+<body>
+    <!-- main content -->
+    <div class="site-wrapper active" id="target">
+        <div class="site-wrapper_left-col">
+            <a href="/" class="logo">Clofus Bot</a>
+            <div class="left-nav">
+                <router-link to="/">
+                    <i class="fa fa-home"></i> Agents
+                </router-link>
+                <!-- <router-link to="/graphs">
+                    <i class="fa fa-pie-chart"></i> Graph
+                </router-link> -->
+            </div>
+        </div>
+        <div class="site-wrapper_top-bar">
+            <a id="toggle">
+                <i class="fa fa-bars"></i>
+            </a>
+        </div>
+        <router-view></router-view>
+    </div>
+    <!-- scripts -->
+
+    <!-- agent route template-->
+    <script type="text/x-template" id="intents">
+      <div class="row" id='agents'>
+            <div>
+                <h1 style="font-size: 30px;">Agents
+                    <button class="btn btn-primary pull-right add" @click="showModal = true;createflag = true">
+                        <i class="fa fa-plus"></i>&nbsp;Add
+                    </button>
+                    <button class="btn btn-primary pull-right add" @click="reloadPage()">
+                        <i class="fa fa-refresh"></i>&nbsp;Refresh
+                    </button>
+                </h1>
+            <div>
+            <div>
+                <div v-for="(data,agentindex) in agents">
+                    <div class='agent-list row' role='button'>
+                        <router-link :to="{ name: 'storylist', params: { agentid: data._id }}">  
+                        <div class='col-md-2'>
+                            <p class='text-capitalize' style="font-size: 20px;">{{data.agentname}}</p>
+                        </div>
+                        <div class='col-md-2'>
+                            <p class='text-capitalize' style="font-size: 20px;">{{data.description}}</p>
+                        </div>
+                        <div class='col-md-2'>
+                            <p class='text-capitalize' class='badge' style="font-size: 20px;">Port {{data.port}}</p>
+                        </div>
+                        <div class='col-md-2'>
+                            <p class='text-capitalize' class="text-capitalize badge" style="font-size: 20px;">{{data.status}}</p>
+                        </div>
+                        </router-link>
+                        <div class="col-md-4" role="button">
+                            <button class="btn btn-sm btn-danger" v-on:click="deleteAgent(data._id)"> <i class="fa fa-trash-o"></i></button>
+                            <button class="btn btn-sm btn-info" @click="showModal = true;editModalData=data;createflag=false"><i class="fa fa-edit" ></i></button>
+
+
+                            <button class="btn btn-sm btn-info" 
+                            @click="data.status=='created'?trainAgent(data._id):data.status=='trained'||data.status=='stopped'?startchat(data._id):data.status == 'started'?stopagentchat(data._id):null"
+                            :disabled="data.status == 'training' ? true : false">
+                                <span v-if="data.status == 'created'">
+                                    <i class="fa fa-refresh" ></i>&nbsp;Train
+                                </span>
+                                <span v-if="data.status == 'training'">
+                                    <i class="fa fa-refresh fa-spin" ></i>&nbsp;Training
+                                </span>
+                                <span v-if="data.status == 'trained'||data.status == 'stopped'">
+                                    <i class="fa fa-play" ></i>&nbsp;Start
+                                </span>
+                                <span v-if="data.status == 'started'">
+                                    <i class="fa fa-stop" ></i>&nbsp;Stop
+                                </span>
+                            </button>
+
+
+                            <!-- <button class="btn btn-sm btn-info"><i class="fa fa-edit" ></i>&nbsp;Entities</button> -->
+                            <router-link :to="{ name: 'entitylist', params: { agentid: data._id }}" class="btn btn-sm btn-info" tag="button">
+                                <i class="fa fa-edit" ></i>&nbsp;Entities
+                            </router-link>
+                            <button v-if="data.status == 'started'" class="btn btn-sm btn-info" @click="showbotflag=true;chatagentdata=data">
+                                <i class="fa fa-comments-o" ></i>&nbsp;Test Bot
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <agentmodal v-if="showModal" @close="modalclose()" :agentdetails="editModalData" :createflag="createflag"></agentmodal>
+            </div>
+        </div>
+        <chatbotnew v-if="showbotflag" @close="modalclose()" :agentdata='chatagentdata'></chatbotnew>
+    </script>
+
+    <!-- stories list  template-->
+    <script type="text/x-template" id="storieslist">
+        <div class="row" id='story'>
+            <div>
+                <h1 style="font-size: 30px;">Stories
+                    <button class="btn btn-primary pull-right add" @click="showModal = true;createflag=true">Add</button>
+                </h1>
+            <div>
+            <div>
+                <!-- <createstorymodal v-if="showModal" @close="modalclose()" v-bind:agentid="$route.params.agentid"></createstorymodal> -->
+                <div v-for="data in storylist">
+                    <div class='agent-list row' role='button'>
+                        <router-link :to="{ name: 'storydetails', params: { agentid: $route.params.agentid,storyid: data._id }}">  
+                        <div class='col-md-4'>
+                            <p class='text-capitalize' style="font-size: 20px;">{{data.story_name}}</p>
+                        </div>
+                        <div class='col-md-6'>
+                            <p class='text-capitalize' style="font-size: 20px;">{{data.description}}</p>
+                        </div>
+                        </router-link>
+                        <div class="col-md-2">
+                            <button class="btn btn-sm btn-danger" v-on:click="deletestory(data._id)"> <i class="fa fa-trash-o"></i></button>
+                            <button class="btn btn-sm btn-info" @click="showModal = true;editModalData=data;createflag=false"><i class="fa fa-edit" ></i></button>
+                        </div>
+                    </div>
+                </div>
+                <storymodal v-if="showModal" @close="modalclose()" :storydata="editModalData" :createflag="createflag" :agentid="$route.params.agentid"></storymodal>
+            </div>
+        </div>
+    </script>
+
+    <!-- entity list -->
+    <script type="text/x-template" id="entitylist">
+        <div class="row" id='entities'>
+            <div>
+                <h1 style="font-size: 30px;">Entities
+                    <button class="btn btn-primary pull-right add" @click="showModal = true;createflag=true">Add</button>
+                </h1>
+            <div>
+            <div>
+                <div v-for="data in entitylist">
+                    <div class='agent-list row' role='button'>
+                        <div class='col-md-10'>
+                            <p class='text-capitalize' style="font-size: 20px;">{{data.name}}</p>
+                        </div>
+                        <div class="col-md-2">
+                            <button class="btn btn-sm btn-danger" v-on:click="deleteEntity(data._id)"> <i class="fa fa-trash-o"></i></button>
+                            <button class="btn btn-sm btn-info" @click="showModal = true;editModalData=data;createflag=false"><i class="fa fa-edit" ></i></button>
+                        </div>
+                    </div>
+                </div>
+                <entitymodal v-if="showModal" @close="modalclose()" :agentid="$route.params.agentid" :entitydata="editModalData" :createflag="createflag"></entitymodal>
+            </div>
+        </div>
+    </script>
+
+    <!-- stories route template-->
+    <script type="text/x-template" id="stories">
+     <div>
+        <div>
+            <h1 style="font-size: 30px;">{{stories.story_name}}
+                <button class="btn btn-primary pull-right add" @click="saveStory(stories)" >Save</button>
+            </h1>
+        </div>
+          <div>
+              <div>
+                <div class="agent-list row" v-for="(intent,intentindex) in stories.intents" style="margin:2%" >
+                    <p style="margin-bottom:0px">Intent Name  </p><input class="form-control" placeholder="Intent Name" style="display: inline; width:25%;" type="text" v-model="intent.name">
+                    <i class="fa fa-trash-o pull-right" role="button" style="color:red;" v-on:click="removeintent(intentindex)"></i>
+                    <div>
+                        <h3> User Input  <i class="fa fa-plus-circle"  role="button" style="font-size: 18px;color:rgb(10, 154, 41);" v-on:click="addInput(intentindex)"></i></h3>
+                        <div v-for="(input,inputIndex) in intent.inputs">
+                            <span class="lead" style="color: gray;">#{{inputIndex+1}}</span>
+                            <div class="row">
+                                <div class="col-md-11">
+                                    <input class="form-control" v-on:dblclick='getWord(input.text,intentindex,inputIndex)' placeholder="What user says?" style="display: inline;width:100%;" type="text" v-model="input.text">
+                                    <!-- <div id="wrapper"> 
+                                            <div contenteditable="true" v-model="input.text"></div>
+                                         </div> -->
+                                </div>
+                                <div role="button">
+                                    <i class="fa fa-minus-circle" style="font-size: 18px;color: #f14949;" v-on:click="removeInput(intentindex,inputIndex)"></i>
+                                </div>
+                            </div>
+                            <div class='row' v-if="input.entities.length==0">
+                                <div class="col-md-11 addinputdiv" role="button"  v-on:click="addEntity(intentindex,inputIndex)">
+                                    <i class="fa fa-plus-circle" style="font-size: 18px;color:rgb(10, 154, 41);"></i>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div>
+                                    <div v-for="(entity,entityindex) in input.entities">
+                                        <div class="row" style="margin: 0px !important">
+                                            <div class="col-md-2">
+                                                <input class="form-control" placeholder="Start" style="display: inline;margin:1%;width:100%;" type="text" v-model="entity.start" >
+                                            </div>
+                                            <div class="col-md-2">
+                                                <input class="form-control" placeholder="End" style="display: inline;margin:1%; width:100%;" type="text" v-model="entity.end" >
+                                            </div>
+                                            <div class="col-md-3">
+                                                <input class="form-control" placeholder="Entity" style="display: inline;margin:1%; width:100%;" type="text" v-model="entity.entity" >
+                                            </div>
+                                            <div class="col-md-3">
+                                                <input class="form-control" placeholder="Value" style="display: inline;margin:1%; width:100%;" type="text" v-model="entity.value" >
+                                            </div>
+                                            <div role="button">
+                                              <i class="fa fa-minus-circle" style="font-size: 18px;color: #f14949;"  v-on:click="removeEntity(intentindex,inputIndex,entityindex)"></i>
+                                              <i class="fa fa-plus-circle" style="font-size: 18px;color:rgb(10, 154, 41);"  v-if="entityindex == input.entities.length-1"  v-on:click="addEntity(intentindex,inputIndex)"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>  
+                      <div>
+                          <p style="margin-top: 2px;"> Action <i class="fa fa-plus-circle" role="button" style="font-size: 18px;color:rgb(10, 154, 41);" v-on:click="addAction(intentindex)"></i></p>
+                          <div v-for="(utterence,utterenceIndex) in intent.utterences">
+                            <span class="lead" style="color: gray;">#{{utterenceIndex+1}}</span>
+                              <div class="row" style="margin-top:1%;">
+                                  <div class="col-md-6">
+                                      <input class="form-control" placeholder="Utterence" style="display: inline;width:100%;" type="text" v-model="utterence.name">
+                                  </div>
+                                  <div class="col-md-5">
+                                      <select class="form-control" style="margin:2px; width:100%" v-model="utterence.type" v-on:change="buttonOnChange(intentindex,utterenceIndex)">
+                                          <option value="text">Text</option>
+                                          <option value="webhook">Web hook</option>
+                                          <option value="buttons">Buttons</option>
+                                      </select>
+                                  </div>
+                                  <div class="col-md-1" role="button">
+                                      <i class="fa fa-minus-circle" style="font-size: 18px;color: #f14949;" v-on:click="removeAction(intentindex,utterenceIndex)"></i>
+                                  </div>
+                              </div>
+                              <div class="row">
+                                  <div class="col-md-11" v-if="utterence.type == 'text'">
+                                      <div class="row" v-for="(texts,textindex) in utterence.text">
+                                            <div class="col-md-11">
+                                                <input class="form-control" placeholder="Text" style="display: inline; width:100%;" type="text" v-model='texts.text'>
+                                            </div>
+                                            <div class="col-md-1">
+                                                <i class="fa fa-minus-circle" style="font-size: 18px;color:#f14949;margin : 28% 1% 1% 1%;" v-if="textindex != 0" role="button" v-on:click="removeActionText(intentindex,utterenceIndex,textindex)"></i>
+                                                <i class="fa fa-plus-circle" style="font-size: 18px;color:rgb(10, 154, 41);margin : 28% 1% 1% 1%;" v-if="textindex == utterence.text.length-1" role="button" v-on:click="addActionText(intentindex,utterenceIndex)"></i>
+                                            </div>
+                                        </div>
+                                  </div>
+                                  <div class="col-md-11" v-if="utterence.type == 'webhook'">
+                                      <input class="form-control" placeholder="Web Hook" style="display: inline; width:100%;" type="text" v-model="utterence.webhook">
+                                  </div>
+                                  <div class="col-md-11" v-if="utterence.type == 'buttons'  && utterence.buttons">
+                                      <div class="row" v-for="(button,index) in utterence.buttons">
+                                          <div class="col-md-4"><input class="form-control" placeholder="Title"  style="display: inline;width:100%;" type="text" v-model="button.title"></div>
+                                          <div class="col-md-4"><input class="form-control" placeholder="Payload"  style="display: inline;width:100%;" type="text" v-model="button.payload"></div>
+                                          <div class="col-md-1">
+                                              <i class="fa fa-minus-circle" style="font-size: 18px;color:#f14949;margin : 28% 1% 1% 1%;" v-if="index != 0" role="button" v-on:click="removeActionButton(intentindex,utterenceIndex,index)"></i>
+                                              <i class="fa fa-plus-circle" style="font-size: 18px;color:rgb(10, 154, 41);margin : 28% 1% 1% 1%;" v-if="index == utterence.buttons.length-1" role="button" v-on:click="addActionButton(intentindex,utterenceIndex)"></i>
+                                          </div>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                </div>
+              </div>
+          </div>
+          <div class="agent-list text-center" style=" padding: 1% 2% 1% 4%;border-radius: 5px;"role="button" v-on:click="addIntent()"><i class="fa fa-plus-circle" style="font-size: 30px;color:rgb(10, 154, 41);"></i></div>
+     </div>
+    </script>
+
+
+    <!-- modal -->
+    <!-- create/edit agent modal -->
+    <script type="text/x-template" id="agent-modal-template">
+        <transition name="modal">
+            <div class="modal-mask">
+                <div class="modal-wrapper">
+                    <div class="modal-container">
+                        <div class="modal-header">
+                            <slot name="header">
+                                <p><span v-if="createflag">Create Agent</span>
+                                    <span v-if="!createflag">Edit Agent</span>
+                                    <i class="fa fa-times-circle pull-right" style="margin-top: 5px;" @click="$emit('close')"></i>
+                                </p>
+                            </slot>
+                        </div>
+                        <div class="modal-body">
+                            <slot name="body">
+                                <p style="font-size:20px">Name <span style='color:red;'>*</span></p>
+                                <input class="form-control" type="text" v-model="agent.agentname">
+                                <p style="font-size:20px"> Description</p>
+                                <input class="form-control" type="text"  v-model="agent.description">
+                                <p style="font-size:20px"> Port number <span style='color:red;'>*</span>    </p>
+                                <input class="form-control" type="text"  v-model="agent.port">
+                            </slot>
+                        </div>
+                        <div class="modal-footer">
+                            <slot name="footer">
+                                <button class="btn btn-primary pull-right add" @click="$emit('close')">Close</button>
+                                <button class="btn btn-primary pull-right add" @click="validatefields(agent)">Save</button>
+                            </slot>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </transition>
+    </script>
+
+    <!-- create/edit story modal -->
+    <script type="text/x-template" id="story-modal-template">
+        <transition name="modal">
+            <div class="modal-mask">
+                <div class="modal-wrapper">
+                    <div class="modal-container">
+                        <div class="modal-header">
+                            <slot name="header">
+                                <p><span v-if="createflag">Create story</span>
+                                    <span v-if="!createflag">Edit story</span>
+                                    <i class="fa fa-times-circle pull-right" style="margin-top: 5px;" @click="$emit('close')"></i>
+                                </p>
+                            </slot>
+                        </div>
+                        <div class="modal-body">
+                            <slot name="body">
+                                <p style="font-size:20px">Name</p>
+                                <input class="form-control" type="text" v-model="story.story_name">
+                                <p style="font-size:20px"> Description</p>
+                                <input class="form-control" type="text"  v-model="story.description">
+                            </slot>
+                        </div>
+                        <div class="modal-footer">
+                            <slot name="footer">
+                                <button class="btn btn-primary pull-right add" @click="$emit('close')">Close</button>
+                                <button class="btn btn-primary pull-right add" @click="updateStories(story)">Save</button>
+                            </slot>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </transition>
+    </script>
+
+    <!-- create/edit entitiy modal -->
+    <script type="text/x-template" id="entity-modal-template">
+        <transition name="modal">
+            <div class="modal-mask">
+                <div class="modal-wrapper">
+                    <div class="modal-container">
+                        <div class="modal-header">
+                            <slot name="header">
+                                <p><span v-if="createflag">Create Entitiy</span>
+                                    <span v-if="createflag">Edit Entity</span>
+                                    <i class="fa fa-times-circle pull-right" style="margin-top: 5px;" @click="$emit('close')"></i>
+                                </p>
+                            </slot>
+                        </div>
+                        <div class="modal-body">
+                            <slot name="body">
+                                <p style="font-size:20px">Entity Name</p>
+                                <input class="form-control" type="text" v-model="entity.name">
+                            </slot>
+                        </div>
+                        <div class="modal-footer">
+                            <slot name="footer">
+                                <button class="btn btn-primary pull-right add" @click="$emit('close')">Close</button>
+                                <button class="btn btn-primary pull-right add" @click="updateEntity(entity)">Save</button>
+                            </slot>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </transition>
+    </script>
+
+    <!-- modal end -->
+
+    <!-- chatbot -->
+    <script type="text/x-template"  id="chatbotnew">
+        <transition name='modal'>
+        <div class="modal-mask">
+            <div class="modal-wrapper">
+                <div class="chat-modal-container">
+                    <section class="msger">
+                            <header class="msger-header">
+                                <div class="msger-header-title">
+                                    <i class="fa fa-comments-o"></i> {{agentdata.agentname}}
+                                </div>
+                                <div class="msger-header-options">
+                                        <button type="submit" class="btn btn-danger"  @click="$emit('close')" style="padding:0px 5px;">Reset</button>
+                                    <span  @click="$emit('close')">
+                                    <i class="fa fa-times-circle"></i>
+                                    </span>
+                                </div>
+                            </header>
+                            <main class="msger-chat">
+                                <!-- <div class="msg left-msg">
+                                    <div class="msg-img" style="background-image: url(https://image.flaticon.com/icons/svg/327/327779.svg)"></div>
+                    
+                                    <div class="msg-bubble">
+                                        <div class="msg-info">
+                                            <div class="msg-info-name">BOT</div>
+                                        </div>
+                        
+                                        <div class="msg-text">
+                                            Hi, welcome to SimpleChat! Go ahead and send me a message. 😄
+                                        </div>
+                                    </div>
+                                </div> -->
+                
+                                <!-- <div class="msg right-msg">
+                                    <div class="msg-img" style="background-image: url(https://image.flaticon.com/icons/svg/145/145867.svg)"></div>
+                    
+                                    <div class="msg-bubble">
+                                        <div class="msg-info">
+                                            <div class="msg-info-name">User</div>
+                                        </div>
+                        
+                                        <div class="msg-text">
+                                            You can change your name in JS section!
+                                        </div>
+                                    </div>
+                                </div> -->
+                            </main>
+                
+                            <form class="msger-inputarea" v-on:submit='sendMessage(message)'>
+                                <input type="text" class="msger-input" v-model='message' placeholder="Enter your message..." >
+                                <button type="submit" class="msger-send-btn">Send</button>
+                            </form>
+                        </section>
+                    </div>
+                </div>
+            </div>
+        </transition>
+    </script>
+
+    <script src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js'></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+    crossorigin="anonymous"></script>
+    <!-- <script src='https://use.fontawesome.com/releases/v5.0.13/js/all.js'></script> -->
+    <script src="./plugins/remarkable-bootstrap-notify/dist/bootstrap-notify.js"></script>
+    <script src="./js/vue.js"></script>
+    <script src="https://unpkg.com/vee-validate@latest"></script>
+    <script src="./js/axios.min.js"></script>
+    <script src="./js/vue-router.js"></script>
+    <script src="./js/index.js"></script>
+    <script src="./js/app.js"></script>
+    <!-- script end -->
+    
+</body>
+
+</html>

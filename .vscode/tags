@@ -1,0 +1,72 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+Action	../clofusbot/rasa.py	/^from rasa_core.actions import Action$/;"	kind:namespace	line:12
+ActionSuggest	../clofusbot/rasa.py	/^class ActionSuggest(Action):$/;"	kind:class	line:21
+Activation	../clofusbot/policy.py	/^            Masking, LSTM, Dense, TimeDistributed, Activation$/;"	kind:namespace	line:20
+Activation	../clofusbot/policy.py	/^        from keras.layers import LSTM, Activation, Masking, Dense$/;"	kind:namespace	line:15
+Agent	../clofusbot/rasa.py	/^from rasa_core.agent import Agent$/;"	kind:namespace	line:13
+ClofusBotPolicy	../clofusbot/policy.py	/^class ClofusBotPolicy(KerasPolicy):$/;"	kind:class	line:12
+ClofusBotPolicy	../clofusbot/rasa.py	/^from clofusbot.policy import ClofusBotPolicy$/;"	kind:namespace	line:10
+ConsoleInputChannel	../clofusbot/rasa.py	/^from rasa_core.channels.console import ConsoleInputChannel$/;"	kind:namespace	line:14
+Dense	../clofusbot/policy.py	/^            Masking, LSTM, Dense, TimeDistributed, Activation$/;"	kind:namespace	line:20
+Dense	../clofusbot/policy.py	/^        from keras.layers import LSTM, Activation, Masking, Dense$/;"	kind:namespace	line:15
+KerasPolicy	../clofusbot/policy.py	/^from rasa_core.policies.keras_policy import KerasPolicy$/;"	kind:namespace	line:8
+LSTM	../clofusbot/policy.py	/^            Masking, LSTM, Dense, TimeDistributed, Activation$/;"	kind:namespace	line:20
+LSTM	../clofusbot/policy.py	/^        from keras.layers import LSTM, Activation, Masking, Dense$/;"	kind:namespace	line:15
+Masking	../clofusbot/policy.py	/^            Masking, LSTM, Dense, TimeDistributed, Activation$/;"	kind:namespace	line:20
+Masking	../clofusbot/policy.py	/^        from keras.layers import LSTM, Activation, Masking, Dense$/;"	kind:namespace	line:15
+MemoizationPolicy	../clofusbot/rasa.py	/^from rasa_core.policies.memoization import MemoizationPolicy$/;"	kind:namespace	line:17
+RasaNLUInterpreter	../clofusbot/rasa.py	/^from rasa_core.interpreter import RasaNLUInterpreter$/;"	kind:namespace	line:16
+RasaNLUModelConfig	../clofusbot/rasa.py	/^    from rasa_nlu.config import RasaNLUModelConfig$/;"	kind:namespace	line:35
+Sequential	../clofusbot/policy.py	/^        from keras.models import Sequential$/;"	kind:namespace	line:16
+Sequential	../clofusbot/policy.py	/^        from keras.models import Sequential$/;"	kind:namespace	line:18
+SlotSet	../clofusbot/rasa.py	/^from rasa_core.events import SlotSet$/;"	kind:namespace	line:15
+TimeDistributed	../clofusbot/policy.py	/^            Masking, LSTM, Dense, TimeDistributed, Activation$/;"	kind:namespace	line:20
+Trainer	../clofusbot/rasa.py	/^    from rasa_nlu.model import Trainer$/;"	kind:namespace	line:36
+__init__.py	../clofusbot/__init__.py	1;"	kind:file	line:1
+absolute_import	../clofusbot/policy.py	/^from __future__ import absolute_import$/;"	kind:namespace	line:1
+absolute_import	../clofusbot/rasa.py	/^from __future__ import absolute_import$/;"	kind:namespace	line:1
+argparse	../clofusbot/rasa.py	/^import argparse$/;"	kind:namespace	line:6
+choices	../clofusbot/rasa.py	/^            choices=["train-nlu", "train-dialogue", "test-bot", "respond"],$/;"	kind:variable	line:126
+config	../clofusbot/rasa.py	/^    from rasa_nlu import config$/;"	kind:namespace	line:37
+description	../clofusbot/rasa.py	/^            description='starts the bot')$/;"	kind:variable	line:122
+division	../clofusbot/policy.py	/^from __future__ import division$/;"	kind:namespace	line:2
+division	../clofusbot/rasa.py	/^from __future__ import division$/;"	kind:namespace	line:2
+help	../clofusbot/rasa.py	/^            help="what the bot should do - e.g. run or train?")$/;"	kind:variable	line:127
+help	../clofusbot/rasa.py	/^        help="input message you want to process")$/;"	kind:variable	line:137
+help	../clofusbot/rasa.py	/^        help="what the project you want to load")$/;"	kind:variable	line:132
+load_data	../clofusbot/rasa.py	/^    from rasa_nlu.training_data import load_data$/;"	kind:namespace	line:34
+load_model	../clofusbot/rasa.py	/^def load_model(project="simpletalk"):$/;"	kind:function	line:87
+logger	../clofusbot/policy.py	/^logger = logging.getLogger(__name__)$/;"	kind:variable	line:10
+logger	../clofusbot/rasa.py	/^logger = logging.getLogger(__name__)$/;"	kind:variable	line:19
+logging	../clofusbot/policy.py	/^import logging$/;"	kind:namespace	line:6
+logging	../clofusbot/rasa.py	/^import logging$/;"	kind:namespace	line:7
+message	../clofusbot/rasa.py	/^        message = parser.parse_args().message$/;"	kind:variable	line:160
+model_architecture	../clofusbot/policy.py	/^    def model_architecture(self, input_shape, output_shape):$/;"	kind:member	line:13
+name	../clofusbot/rasa.py	/^    def name(self):$/;"	kind:member	line:22
+nargs	../clofusbot/rasa.py	/^        nargs='?',$/;"	kind:variable	line:131
+nargs	../clofusbot/rasa.py	/^        nargs='?',$/;"	kind:variable	line:136
+parser	../clofusbot/rasa.py	/^    parser = argparse.ArgumentParser($/;"	kind:variable	line:121
+policy.py	../clofusbot/policy.py	1;"	kind:file	line:1
+print_function	../clofusbot/policy.py	/^from __future__ import print_function$/;"	kind:namespace	line:3
+print_function	../clofusbot/rasa.py	/^from __future__ import print_function$/;"	kind:namespace	line:3
+process_input	../clofusbot/rasa.py	/^def process_input(agent, serve_forever=True, message='Hi'):$/;"	kind:function	line:92
+project	../clofusbot/rasa.py	/^        project = "simpletalk"$/;"	kind:variable	line:144
+project	../clofusbot/rasa.py	/^    project = parser.parse_args().project$/;"	kind:variable	line:140
+rasa.py	../clofusbot/rasa.py	1;"	kind:file	line:1
+respond	../clofusbot/rasa.py	/^def respond(project="simpletalk", message=""):$/;"	kind:function	line:109
+run	../clofusbot/rasa.py	/^    def run(self, dispatcher, tracker, domain):$/;"	kind:member	line:25
+task	../clofusbot/rasa.py	/^    task = parser.parse_args().task$/;"	kind:variable	line:139
+task	../clofusbot/rasa.py	/^    task = parser.parse_args().task$/;"	kind:variable	line:149
+testbot	../clofusbot/rasa.py	/^def testbot(project="simpletalk", serve_forever=True):$/;"	kind:function	line:99
+train_dialogue	../clofusbot/rasa.py	/^def train_dialogue(project="simpletalk"):$/;"	kind:function	line:47
+train_nlu	../clofusbot/rasa.py	/^def train_nlu(project='simpletalk'):$/;"	kind:function	line:33
+train_online	../clofusbot/rasa.py	/^def train_online(project="simpletalk"):$/;"	kind:function	line:69
+unicode_literals	../clofusbot/policy.py	/^from __future__ import unicode_literals$/;"	kind:namespace	line:4
+unicode_literals	../clofusbot/rasa.py	/^from __future__ import unicode_literals$/;"	kind:namespace	line:4
+utils	../clofusbot/rasa.py	/^from rasa_core import utils$/;"	kind:namespace	line:11
+warnings	../clofusbot/rasa.py	/^import warnings$/;"	kind:namespace	line:8

@@ -1,0 +1,113 @@
+{
+  "action_fingerprints": {
+    "action_listen": {
+      "slots": []
+    },
+    "utter_are_you_sure": {
+      "slots": []
+    },
+    "utter_who_are_you": {
+      "slots": []
+    },
+    "utter_you_are_funny": {
+      "slots": []
+    },
+    "utter_ha_ha": {
+      "slots": []
+    },
+    "utter_what_do_you_mean": {
+      "slots": []
+    },
+    "utter_are_we_friends": {
+      "slots": []
+    },
+    "utter_clofus_bye": {
+      "slots": []
+    },
+    "utter_clofus_exclamation": {
+      "slots": []
+    },
+    "utter_are_you_ready": {
+      "slots": []
+    },
+    "utter_you_are_beautiful": {
+      "slots": []
+    },
+    "utter_can_you_help_me": {
+      "slots": []
+    },
+    "utter_clofus_boss": {
+      "slots": []
+    },
+    "utter_nice_to_meet_you": {
+      "slots": []
+    },
+    "utter_how_are_you": {
+      "slots": []
+    },
+    "utter_clofus_hobby": {
+      "slots": []
+    },
+    "utter_you_are_fired": {
+      "slots": []
+    },
+    "utter_are_you_busy": {
+      "slots": []
+    },
+    "utter_answer_me": {
+      "slots": []
+    },
+    "utter_dont_care": {
+      "slots": []
+    },
+    "utter_where_clofus_live": {
+      "slots": []
+    },
+    "utter_marry_me": {
+      "slots": []
+    },
+    "utter_thank_you": {
+      "slots": []
+    },
+    "utter_birth_date": {
+      "slots": []
+    },
+    "utter_clofus_work": {
+      "slots": []
+    },
+    "utter_clofus_country": {
+      "slots": []
+    },
+    "utter_oops": {
+      "slots": []
+    },
+    "utter_can_you_learn": {
+      "slots": []
+    },
+    "utter_confirmation": {
+      "slots": []
+    },
+    "utter_you_are_welcome": {
+      "slots": []
+    },
+    "utter_you_are_clever": {
+      "slots": []
+    },
+    "utter_how_old_are_you": {
+      "slots": []
+    },
+    "utter_clofus_wish": {
+      "slots": []
+    }
+  },
+  "rasa_core": "0.9.0a5",
+  "max_histories": [
+    3,
+    5
+  ],
+  "ensemble_name": "rasa_core.policies.ensemble.SimplePolicyEnsemble",
+  "policy_names": [
+    "rasa_core.policies.memoization.MemoizationPolicy",
+    "clofusassistant.clofusbot.policy.ClofusBotPolicy"
+  ]
+}

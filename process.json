@@ -1,0 +1,17 @@
+{
+  "apps" : [{
+    "name"        : "clofuscareers",
+    "script"      : "./server.js",
+    "watch"       : false,
+    "ignore_watch" : ["node_modules", "db", ".git", "uploads"],
+    "env_development": {
+      "ENVIRONMENT": "dev"
+    },
+    "env_test": {
+      "ENVIRONMENT": "test"
+    },
+    "env_production" : {
+      "ENVIRONMENT": "prod"
+    }
+  }]
+}

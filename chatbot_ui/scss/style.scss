@@ -1,0 +1,326 @@
+@import url(https://fonts.googleapis.com/css?family=Pacifico);
+@import url(https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz:400,700,300);
+$blue: #34495E;
+$lightblue: #3498DB;
+$darkblue: #2C3E50;
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: lightgray;
+  font-family: 'Yanone Kaffeesatz', sans-serif;
+}
+
+.row {
+  &:after, &:before {
+    content: '';
+    display: table;
+    clear: both;
+  }
+  margin: 0 -15px;
+}
+
+.col-1 { width: 33.333%; padding: 0 15px; float: left; }
+.col-2 { width: 66.666%; padding: 0 15px; float: left; }
+.col-3 { width: 100%; padding: 0 15px; float: left; }
+
+.wrapper {
+  display: flex;
+  min-height: 100vh;
+  justify-content: center;
+  padding: 50px 50px;
+  &_container {
+    width: 1000px;
+    max-height: 1000px;
+    border-radius: 10px;
+  }
+}
+
+.site-wrapper {
+  min-height: 500px;
+  background: #ECECEC;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.23);
+  padding-left: 80px;
+  padding-right: 30px;
+  padding-top: 85px;
+  padding-bottom: 30px;
+  position: relative;
+  transition: padding .3s linear;
+  &_left-col {
+    position: absolute;
+    background: $blue;
+    width: 45px;
+    height: 100%;
+    top: 0;
+    left: 0;
+    transition: width .3s ease-in-out;
+    overflow: hidden;
+    z-index: 20;
+    border-radius: 10px 0 0 10px;
+    .logo {
+      display: block;
+      background: $lightblue;
+      padding: 15px;
+      font-family: 'Pacifico', cursive;
+      font-size: 24px;
+      text-decoration: none;
+      color: transparent;
+      text-align: center;
+      transition: background .2s linear;
+      &:before {
+        content: 'L';
+        color: rgba(255, 255, 255, 0.6);
+        opacity: 1;
+      }
+      &:hover, &:focus {
+        background: darken($lightblue, 10%);
+        text-decoration: none;
+      }
+    }
+    .left-nav {
+      a {
+        display: block;
+        line-height: 45px;
+        border-left: 0 solid $blue;
+        padding: 0 15px;
+        text-transform: uppercase;
+        font-weight: bold;
+        color: rgba(255, 255, 255, 0.6);
+        text-decoration: none;
+        letter-spacing: 2px;
+        border-bottom: 1px solid $darkblue;
+        transition: all .2s ease-in-out;
+        white-space: nowrap;
+        i {
+          width: 35px;
+        }
+        &:hover, &:focus, &.active {
+          background: $darkblue;
+          border-left-color: $lightblue;
+          border-left-width: 5px;
+        }
+      }
+    }
+  }
+  &_top-bar {
+    height: 54px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: #fff;
+    z-index: 10;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.15);
+    text-align: right;
+    a {
+      display: inline-block;
+      vertical-align: middle;
+      width: 55px;
+      height: 55px;
+      line-height: 55px;
+      text-align: center;
+      transition: all .2s linear;
+      color: $lightblue;
+      &:hover, &.active {
+        background: $lightblue;
+        color: rgba(255, 255, 255, 0.6);
+      }
+    }
+  }
+  &.active {
+    padding-left: 230px;
+    .site-wrapper_left-col {
+      width: 200px;
+      .logo {
+        color: rgba(255, 255, 255, 0.6);
+        &:before {
+          opacity: 0;
+          position: absolute;
+        }
+      }
+    }
+  }
+}
+
+.user-item {
+  background: #fff;
+  overflow: hidden;
+  border-radius: 10px;
+  margin-bottom: 30px;
+  &_photo {
+    overflow: hidden;
+    position: relative;
+    &:after {
+      content: '';
+      width: 150px;
+      height: 150px;
+      display: block;
+      position: absolute;
+      background: rgba(255, 255, 255, 0.5);
+      z-index: 20;
+      top: -80px;
+      right: -80px;
+      transform: rotate(45deg);
+    }
+    img {
+      max-width: 100%;
+    }
+  }
+  &_info {
+    padding: 15px;
+    text-align: center;
+    .name {
+      color: $blue;
+      font-size: 20px;
+      letter-spacing: 1px;
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+    .sub {
+      color: #AFAFAF;
+    }
+    .controls {
+      padding-top: 15px;
+      a {
+        display: inline-block;
+        width: 40px;
+        height: 40px;
+        border-radius: 25px;
+        background: $lightblue;
+        color: rgba(255, 255, 255, 0.6);
+        text-decoration: none;
+        line-height: 40px;
+        font-size: 16px;
+        text-align: center;
+        margin: 0 5px;
+        transition: background .3s linear, transform .3s ease-in-out;
+        &:hover {
+          background: darken($lightblue, 20%);
+          transform: scale(1.2);
+        }
+      }
+    }
+  }
+}
+
+.chat {
+  min-height: 354px;
+  background: #fff;
+  overflow: hidden;
+  border-radius: 10px;
+  position: relative;
+  padding-top: 60px;
+  padding-bottom: 75px;
+  .head {
+    line-height: 45px;
+    background: $lightblue;
+    padding: 0 15px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    letter-spacing: 1px;
+    color: rgba(255, 255, 255, 0.6);
+    font-weight: bold;
+    border-radius: 10px 10px 0 0;
+    i {
+      margin-right: 10px;
+    }
+  }
+  .footer {
+    height: 60px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: $blue;
+    text-align: center;
+    padding: 10px 15px;
+    border-radius: 0 0 10px 10px;
+    input[type="text"] {
+      display: inline-block;
+      background: rgba(255, 255, 255, 0.15);
+      border-radius: 5px;
+      vertical-align: middle;
+      border: 0;
+      height: 40px;
+      padding: 0 15px;
+      margin: 0 5px;
+      width: 100%;
+      max-width: 250px;
+      outline: none;
+      transition: all .1s linear;
+      color: gray;
+      &::-webkit-input-placeholder {
+        color: rgba(#fff, 0.7);
+      }
+      &::-moz-placeholder {
+        color: rgba(#fff, 0.7);
+      }
+      &:-ms-input-placeholder {
+        color: rgba(#fff, 0.7);
+      }
+      &:-moz-placeholder {
+        color: rgba(#fff, 0.7);
+      }
+      &:focus {
+        background: #fff;
+      }
+    }
+    button {
+      background: $lightblue;
+      border: 0;
+      display: inline-block;
+      vertical-align: middle;
+      color: rgba(255, 255, 255, 0.6);
+      width: 40px;
+      height: 40px;
+      border-radius: 20px;
+      cursor: pointer;
+      transition: background .2s linear;
+      outline: none;
+      &:hover {
+        background: darken($lightblue, 20%);
+      }
+    }
+  }
+}
+.chat_inner {
+  &-item {
+    padding: 10px 30px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    .photo {
+      width: 40px;
+      height: 40px;
+      border-radius: 20px;
+      overflow: hidden;
+      margin-right: 10px;
+      img {
+        width: 40px;
+        height: 40px;
+        display: block;
+        object-fit: cover;
+      }
+    }
+    .message {
+        padding: 12px 20px;
+        background-color: #ECECEC;
+        border-radius: 5px;
+        color: #808080;
+        letter-spacing: 1px;
+      ~ .photo {
+        margin-right: 0;
+        margin-left: 10px;
+      }
+    }
+    &.right {
+       justify-content: flex-end;
+    }
+  }
+}

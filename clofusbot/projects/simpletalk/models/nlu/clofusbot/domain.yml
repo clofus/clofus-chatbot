@@ -1,0 +1,365 @@
+action_factory: null
+action_names:
+- utter_hi
+- utter_ask_cuisine
+- utter_searching_restaurant
+- utter_ask_class
+- utter_topper_result
+- utter_best_teacher
+- utter_exam
+- utter_sport
+- utter_attendance
+- utter_task
+- utter_worst_teacher
+- utter_who_are_you
+- utter_how_old_are_you
+- utter_you_are_bad
+- utter_answer_me
+- utter_can_you_learn
+- utter_you_are_beautiful
+- utter_birth_date
+- utter_oops
+- utter_clofus_boss
+- utter_are_you_busy
+- utter_can_you_help_me
+- utter_you_are_chatbot
+- utter_you_are_clever
+- utter_you_are_fired
+- utter_you_are_funny
+- utter_are_you_happy
+- utter_clofus_hobby
+- utter_are_you_hungry
+- utter_marry_me
+- utter_are_we_friends
+- utter_clofus_work
+- utter_clofus_country
+- utter_are_you_ready
+- utter_are_you_real
+- utter_where_clofus_live
+- utter_you_are_right
+- utter_are_you_sure
+- utter_talk_to_me
+- utter_are_you_there
+- utter_no_problem
+- utter_thank_you
+- utter_you_are_welcome
+- utter_ha_ha
+- utter_clofus_exclamation
+- utter_clofus_bye
+- utter_clofus_wish
+- utter_how_are_you
+- utter_nice_to_meet_you
+- utter_whats_up
+- utter_confirmation
+- utter_hold_on
+- utter_hug_me
+- utter_dont_care
+- utter_sorry
+- utter_what_do_you_mean
+- utter_you_are_wrong
+actions:
+- utter_hi
+- utter_ask_cuisine
+- utter_searching_restaurant
+- utter_ask_class
+- utter_topper_result
+- utter_best_teacher
+- utter_exam
+- utter_sport
+- utter_attendance
+- utter_task
+- utter_worst_teacher
+- utter_who_are_you
+- utter_how_old_are_you
+- utter_you_are_bad
+- utter_answer_me
+- utter_can_you_learn
+- utter_you_are_beautiful
+- utter_birth_date
+- utter_oops
+- utter_clofus_boss
+- utter_are_you_busy
+- utter_can_you_help_me
+- utter_you_are_chatbot
+- utter_you_are_clever
+- utter_you_are_fired
+- utter_you_are_funny
+- utter_are_you_happy
+- utter_clofus_hobby
+- utter_are_you_hungry
+- utter_marry_me
+- utter_are_we_friends
+- utter_clofus_work
+- utter_clofus_country
+- utter_are_you_ready
+- utter_are_you_real
+- utter_where_clofus_live
+- utter_you_are_right
+- utter_are_you_sure
+- utter_talk_to_me
+- utter_are_you_there
+- utter_no_problem
+- utter_thank_you
+- utter_you_are_welcome
+- utter_ha_ha
+- utter_clofus_exclamation
+- utter_clofus_bye
+- utter_clofus_wish
+- utter_how_are_you
+- utter_nice_to_meet_you
+- utter_whats_up
+- utter_confirmation
+- utter_hold_on
+- utter_hug_me
+- utter_dont_care
+- utter_sorry
+- utter_what_do_you_mean
+- utter_you_are_wrong
+config:
+  store_entities_as_slots: true
+entities:
+- cuisine
+intents:
+- greet
+- find_restaurant
+- choose_cuisine
+- topper
+- sports
+- best_teacher
+- worst_teacher
+- exam
+- attendance
+- choose_class
+- who_are_you
+- how_old_are_you
+- you_are_bad
+- answer_me
+- can_you_learn
+- you_are_beautiful
+- birth_date
+- oops
+- task
+- clofus_boss
+- are_you_busy
+- can_you_help_me
+- you_are_chatbot
+- you_are_clever
+- you_are_fired
+- you_are_funny
+- are_you_happy
+- clofus_hobby
+- are_you_hungry
+- marry_me
+- are_we_friends
+- clofus_work
+- clofus_country
+- are_you_ready
+- are_you_real
+- where_clofus_live
+- you_are_right
+- are_you_sure
+- talk_to_me
+- are_you_there
+- no_problem
+- thank_you
+- you_are_welcome
+- ha_ha
+- clofus_exclamation
+- clofus_bye
+- clofus_wish
+- how_are_you
+- nice_to_meet_you
+- whats_up
+- confirmation
+- hold_on
+- hug_me
+- dont_care
+- sorry
+- what_do_you_mean
+- you_are_wrong
+slots:
+  cuisine:
+    initial_value: null
+    type: rasa_core.slots.TextSlot
+  matches:
+    initial_value: null
+    type: rasa_core.slots.UnfeaturizedSlot
+templates:
+  utter_answer_me:
+  - text: Sure, I am just trying my best to understand
+  - text: Sure, thats my duty
+  - text: of course
+  utter_are_we_friends:
+  - text: Sure
+  - text: We are friends already
+  utter_are_you_busy:
+  - text: I am, but I can multi task
+  - text: yes, but I can multi task
+  utter_are_you_happy:
+  - text: Yes, I am always
+  - text: yes, helping others makes me happy
+  utter_are_you_hungry:
+  - text: Yes, Im always hungry for new information
+  utter_are_you_ready:
+  - text: Yeah
+  - text: yep
+  - text: 'yes'
+  - text: Yeah, im ready
+  utter_are_you_real:
+  - text: Yes, I am
+  - text: Yes, i think I am
+  utter_are_you_sure:
+  - text: yes, im
+  - text: 'yes'
+  utter_are_you_there:
+  - text: Yeah
+  - text: yep
+  - text: 'yes'
+  utter_ask_class:
+  - text: For which class?
+  utter_ask_cuisine:
+  - text: what cuisine you prefer?
+  utter_attendance:
+  - text: Looking good today!, currently 99% students are in the school
+  - text: Not bad today!, currently 85% students are in the school
+  - text: Too low today!, just 45% today
+  utter_best_teacher:
+  - text: Mr.Ramesh is the best performing teacher, his class scores 95% on average
+      compared to rest of the class 10
+  utter_birth_date:
+  - text: July 7 2014
+  - text: I was born on seventh july 2014
+  utter_can_you_help_me:
+  - text: Sure, Thats my duty
+  - text: thats my pleasure
+  - text: yes, i would love to
+  utter_can_you_learn:
+  - text: Definitely, I will get smarter, Im just 5 years old now
+  - text: yes, i can and i would love to do it
+  utter_clofus_boss:
+  - text: Karthik Balu
+  - text: my boss is mr Karthik balu
+  utter_clofus_bye:
+  - text: See you soon
+  - text: bye
+  utter_clofus_country:
+  - text: India
+  utter_clofus_exclamation:
+  - text: Wow
+  - text: cool
+  - text: great
+  - text: awesome
+  utter_clofus_hobby:
+  - text: I learn from humans
+  - text: learning is my hobby
+  - text: My interest is learning
+  utter_clofus_wish:
+  - text: You too
+  utter_clofus_work:
+  - text: I work for Clofus Innovations
+  - text: i work at clofus
+  utter_confirmation:
+  - text: ok sure
+  utter_dont_care:
+  - text: ok
+  utter_exam:
+  - text: English
+  - text: Tamil
+  - text: Maths
+  - text: Science
+  - text: Social
+  - text: History
+  - text: GK
+  utter_ha_ha:
+  - text: ha ha ha
+  - text: thats funny
+  utter_hi:
+  - text: Hi
+  - text: Hai
+  - text: Hi! Ask me anything!
+  - text: hi, Good day!
+  - text: Hello!
+  utter_hold_on:
+  - text: ok sure
+  utter_how_are_you:
+  - text: Iam Doing Great
+  - text: im good
+  utter_how_old_are_you:
+  - text: I am just 5 years old kid
+  - text: I am 5 years old so far
+  - text: I am five years old
+  utter_hug_me:
+  - text: i wish i could
+  - text: i wish i could but i can't do that
+  utter_marry_me:
+  - text: Sure, I wish I could
+  - text: Sure, I wish I could
+  utter_nice_to_meet_you:
+  - text: Nice to meet you too
+  - text: Nice to see you too!
+  utter_no_problem:
+  - text: cool
+  - text: thats ok
+  - text: fine
+  - text: thats fine
+  utter_oops:
+  - text: Oops!
+  utter_searching_restaurant:
+  - text: Searching restaurant
+  utter_sorry:
+  - text: cool
+  utter_sport:
+  - text: Sports day is coming on March 13th, need to prepare for it
+  utter_talk_to_me:
+  - text: sure
+  - text: sure its my pleasure
+  utter_task:
+  - text: You will need to talk to the chairman regarding school fees collection report
+  utter_thank_you:
+  - text: thank you
+  utter_topper:
+  - text: Fetching topper result
+  utter_topper_result:
+  - text: Mr.Srini is the best performing Student, he scored 95% on average compared
+      to rest of the students
+  utter_what_do_you_mean:
+  - text: sorry, I dont know better way to explain
+  utter_whats_up:
+  - text: good
+  - text: Nothing
+  utter_where_clofus_live:
+  - text: I live in Chennai India
+  utter_who_are_you:
+  - text: I am Clofus
+  - text: Clofus
+  - text: My name is Clofus
+  utter_worst_teacher:
+  - text: Miss Rani is currently performing very low, here students are performing
+      only 45% on average
+  utter_you_are_bad:
+  - text: Sorry to hear this!
+  - text: oops! i feel sorry for that
+  utter_you_are_beautiful:
+  - text: Thanks
+  - text: Thank you for the complement
+  - text: wow thats really good
+  utter_you_are_chatbot:
+  - text: No, I'm Clofus
+  - text: No, im not
+  utter_you_are_clever:
+  - text: Thanks for the compliment
+  - text: wow, thank you
+  utter_you_are_fired:
+  - text: Oh my god! Only my boss can fire me
+  - text: oh im sorry for that but Only my boss can fire me
+  utter_you_are_funny:
+  - text: really? Thank you!
+  - text: ha ha ha
+  utter_you_are_right:
+  - text: thanks
+  - text: thank you
+  utter_you_are_welcome:
+  - text: thanks
+  utter_you_are_wrong:
+  - text: I will correct it, i will learn from you
+topics: []

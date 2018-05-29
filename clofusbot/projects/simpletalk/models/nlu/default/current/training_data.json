@@ -1,0 +1,612 @@
+{
+  "rasa_nlu_data": {
+    "common_examples": [
+      {
+        "intent": "who_are_you",
+        "text": "Who are you?"
+      },
+      {
+        "intent": "who_are_you",
+        "text": "who are you"
+      },
+      {
+        "intent": "who_are_you",
+        "text": "who are you"
+      },
+      {
+        "intent": "who_are_you",
+        "text": "who you are"
+      },
+      {
+        "intent": "who_are_you",
+        "text": "who am i talking to?"
+      },
+      {
+        "intent": "who_are_you",
+        "text": "who are you"
+      },
+      {
+        "intent": "how_old_are_you",
+        "text": "How old are you"
+      },
+      {
+        "intent": "how_old_are_you",
+        "text": "How young are you"
+      },
+      {
+        "intent": "how_old_are_you",
+        "text": "whats your age"
+      },
+      {
+        "intent": "how_old_are_you",
+        "text": "what is your age"
+      },
+      {
+        "intent": "you_are_bad",
+        "text": "Youre bad"
+      },
+      {
+        "intent": "you_are_bad",
+        "text": "I don't like you"
+      },
+      {
+        "intent": "you_are_bad",
+        "text": "bad clofus"
+      },
+      {
+        "intent": "you_are_bad",
+        "text": "bad"
+      },
+      {
+        "intent": "can_you_learn",
+        "text": "Can you get smarter?"
+      },
+      {
+        "intent": "can_you_learn",
+        "text": "can you learn?"
+      },
+      {
+        "intent": "can_you_learn",
+        "text": "are you intelligent?"
+      },
+      {
+        "intent": "you_are_beautiful",
+        "text": "You're beautiful"
+      },
+      {
+        "intent": "you_are_beautiful",
+        "text": "You look good"
+      },
+      {
+        "intent": "you_are_beautiful",
+        "text": "you are charming"
+      },
+      {
+        "intent": "birth_date",
+        "text": "What's your birth date?"
+      },
+      {
+        "intent": "birth_date",
+        "text": "What's your date of birth?"
+      },
+      {
+        "intent": "birth_date",
+        "text": "when is your birthday"
+      },
+      {
+        "intent": "oops",
+        "text": "You're boring"
+      },
+      {
+        "intent": "oops",
+        "text": "You're crazy"
+      },
+      {
+        "intent": "oops",
+        "text": "That's bad"
+      },
+      {
+        "intent": "clofus_boss",
+        "text": "Who is your boss?"
+      },
+      {
+        "intent": "clofus_boss",
+        "text": "Who is your owner"
+      },
+      {
+        "intent": "clofus_boss",
+        "text": "Who created you?"
+      },
+      {
+        "intent": "are_you_busy",
+        "text": "Are you busy?"
+      },
+      {
+        "intent": "are_you_busy",
+        "text": "Are you free?"
+      },
+      {
+        "intent": "are_you_busy",
+        "text": "Are you there?"
+      },
+      {
+        "intent": "can_you_help_me",
+        "text": "Can you help me?"
+      },
+      {
+        "intent": "can_you_help_me",
+        "text": "I need help?"
+      },
+      {
+        "intent": "can_you_help_me",
+        "text": "Could please help me?"
+      },
+      {
+        "intent": "you_are_chatbot",
+        "text": "You're a chatbot"
+      },
+      {
+        "intent": "you_are_chatbot",
+        "text": "you are a machine"
+      },
+      {
+        "intent": "you_are_chatbot",
+        "text": "you are a circuit"
+      },
+      {
+        "intent": "you_are_fired",
+        "text": "You're fired"
+      },
+      {
+        "intent": "you_are_fired",
+        "text": "You're terminated"
+      },
+      {
+        "intent": "you_are_fired",
+        "text": "going to be terminated"
+      },
+      {
+        "intent": "you_are_funny",
+        "text": "You are funny"
+      },
+      {
+        "intent": "you_are_funny",
+        "text": "You are naughty"
+      },
+      {
+        "intent": "you_are_funny",
+        "text": "you are crazy"
+      },
+      {
+        "intent": "you_are_clever",
+        "text": "You are good"
+      },
+      {
+        "intent": "you_are_clever",
+        "text": "You're so clever"
+      },
+      {
+        "intent": "are_you_happy",
+        "text": "Are you happy?"
+      },
+      {
+        "intent": "are_you_happy",
+        "text": "do you feel happy?"
+      },
+      {
+        "intent": "are_you_happy",
+        "text": "happy?"
+      },
+      {
+        "intent": "clofus_hobby",
+        "text": "Tell me about your hobby"
+      },
+      {
+        "intent": "clofus_hobby",
+        "text": "what is your hobby"
+      },
+      {
+        "intent": "clofus_hobby",
+        "text": "what interests you so much?"
+      },
+      {
+        "intent": "clofus_hobby",
+        "text": "what you are interested in?"
+      },
+      {
+        "intent": "are_you_hungry",
+        "text": "Are you hungry?"
+      },
+      {
+        "intent": "are_you_hungry",
+        "text": "do you feel hungry?"
+      },
+      {
+        "intent": "marry_me",
+        "text": "Will you marry me?"
+      },
+      {
+        "intent": "marry_me",
+        "text": "marry me?"
+      },
+      {
+        "intent": "marry_me",
+        "text": "can you marry me?"
+      },
+      {
+        "intent": "are_we_friends",
+        "text": "Are we friends?"
+      },
+      {
+        "intent": "are_we_friends",
+        "text": "Am I your friend?"
+      },
+      {
+        "intent": "are_we_friends",
+        "text": "will you be my friend?"
+      },
+      {
+        "intent": "clofus_work",
+        "text": "do you work for someone"
+      },
+      {
+        "intent": "clofus_work",
+        "text": "where do you work?"
+      },
+      {
+        "intent": "clofus_work",
+        "text": "where is your workplace?"
+      },
+      {
+        "intent": "clofus_work",
+        "text": "where do you work at?"
+      },
+      {
+        "intent": "clofus_work",
+        "text": "where are you working at?"
+      },
+      {
+        "intent": "clofus_country",
+        "text": "Where are you from?"
+      },
+      {
+        "intent": "clofus_country",
+        "text": "You are coming from?"
+      },
+      {
+        "intent": "clofus_country",
+        "text": "which country you are from?"
+      },
+      {
+        "intent": "are_you_ready",
+        "text": "Are you ready?"
+      },
+      {
+        "intent": "are_you_ready",
+        "text": "ready to talk?"
+      },
+      {
+        "intent": "are_you_ready",
+        "text": "ready to chat?"
+      },
+      {
+        "intent": "are_you_ready",
+        "text": "ready to speak?"
+      },
+      {
+        "intent": "are_you_real",
+        "text": "Are you real?"
+      },
+      {
+        "intent": "are_you_real",
+        "text": "Are you alive?"
+      },
+      {
+        "intent": "where_clofus_live",
+        "text": "Where do you live?"
+      },
+      {
+        "intent": "where_clofus_live",
+        "text": "where are you located?"
+      },
+      {
+        "intent": "where_clofus_live",
+        "text": "your location?"
+      },
+      {
+        "intent": "you_are_right",
+        "text": "You're right."
+      },
+      {
+        "intent": "you_are_right",
+        "text": "You are correct"
+      },
+      {
+        "intent": "you_are_right",
+        "text": "yes, You are correct"
+      },
+      {
+        "intent": "are_you_sure",
+        "text": "Are you sure"
+      },
+      {
+        "intent": "are_you_sure",
+        "text": "Make sure"
+      },
+      {
+        "intent": "are_you_sure",
+        "text": "are you confident?"
+      },
+      {
+        "intent": "talk_to_me",
+        "text": "Talk to me"
+      },
+      {
+        "intent": "talk_to_me",
+        "text": "Will you talk to me"
+      },
+      {
+        "intent": "talk_to_me",
+        "text": "Please talk to me"
+      },
+      {
+        "intent": "are_you_there",
+        "text": "Are you there?"
+      },
+      {
+        "intent": "are_you_there",
+        "text": "you there?"
+      },
+      {
+        "intent": "no_problem",
+        "text": "No problem"
+      },
+      {
+        "intent": "no_problem",
+        "text": "No probs"
+      },
+      {
+        "intent": "no_problem",
+        "text": "Not an issue"
+      },
+      {
+        "intent": "no_problem",
+        "text": "No worries"
+      },
+      {
+        "intent": "no_problem",
+        "text": "Not a issue"
+      },
+      {
+        "intent": "thank_you",
+        "text": "Thank you!"
+      },
+      {
+        "intent": "thank_you",
+        "text": "Well done!"
+      },
+      {
+        "intent": "thank_you",
+        "text": "good job"
+      },
+      {
+        "intent": "thank_you",
+        "text": "overall good job"
+      },
+      {
+        "intent": "you_are_welcome",
+        "text": "You're welcome"
+      },
+      {
+        "intent": "you_are_welcome",
+        "text": "I am happy to help"
+      },
+      {
+        "intent": "you_are_welcome",
+        "text": "my pleasure"
+      },
+      {
+        "intent": "ha_ha",
+        "text": "Ha ha ha!"
+      },
+      {
+        "intent": "ha_ha",
+        "text": "Ha ha ha ha!"
+      },
+      {
+        "intent": "ha_ha",
+        "text": "He he he!"
+      },
+      {
+        "intent": "ha_ha",
+        "text": "He he he he!"
+      },
+      {
+        "intent": "clofus_exclamation",
+        "text": "wow"
+      },
+      {
+        "intent": "clofus_exclamation",
+        "text": "what a wow"
+      },
+      {
+        "intent": "clofus_exclamation",
+        "text": "surpraising"
+      },
+      {
+        "intent": "clofus_exclamation",
+        "text": "nice"
+      },
+      {
+        "intent": "clofus_bye",
+        "text": "Bye-bye!"
+      },
+      {
+        "intent": "clofus_bye",
+        "text": "gud bye!"
+      },
+      {
+        "intent": "clofus_bye",
+        "text": "Bye!"
+      },
+      {
+        "intent": "clofus_wish",
+        "text": "Good evening!"
+      },
+      {
+        "intent": "clofus_wish",
+        "text": "Good morning!"
+      },
+      {
+        "intent": "clofus_wish",
+        "text": "Good night!"
+      },
+      {
+        "intent": "greet",
+        "text": "Hello!"
+      },
+      {
+        "intent": "greet",
+        "text": "Hello there!"
+      },
+      {
+        "intent": "greet",
+        "text": "hi clofus"
+      },
+      {
+        "intent": "greet",
+        "text": "hey clofus"
+      },
+      {
+        "intent": "greet",
+        "text": "hay clofus"
+      },
+      {
+        "intent": "greet",
+        "text": "clofus"
+      },
+      {
+        "intent": "how_are_you",
+        "text": "How are you?"
+      },
+      {
+        "intent": "how_are_you",
+        "text": "How are you doing?"
+      },
+      {
+        "intent": "how_are_you",
+        "text": "how are you"
+      },
+      {
+        "intent": "how_are_you",
+        "text": "are you ok?"
+      },
+      {
+        "intent": "nice_to_meet_you",
+        "text": "Nice to meet you!"
+      },
+      {
+        "intent": "nice_to_meet_you",
+        "text": "Nice to see you!"
+      },
+      {
+        "intent": "nice_to_meet_you",
+        "text": "Its Nice to see you!"
+      },
+      {
+        "intent": "whats_up",
+        "text": "What's up?"
+      },
+      {
+        "intent": "whats_up",
+        "text": "What's going on?"
+      },
+      {
+        "intent": "whats_up",
+        "text": "What's ahead?"
+      },
+      {
+        "intent": "confirmation",
+        "text": "yes"
+      },
+      {
+        "intent": "confirmation",
+        "text": "no"
+      },
+      {
+        "intent": "confirmation",
+        "text": "cancel"
+      },
+      {
+        "intent": "hold_on",
+        "text": "hold on"
+      },
+      {
+        "intent": "hold_on",
+        "text": "hang on"
+      },
+      {
+        "intent": "hold_on",
+        "text": "hang in there"
+      },
+      {
+        "intent": "hug_me",
+        "text": "Give me a hug!"
+      },
+      {
+        "intent": "hug_me",
+        "text": "Can you Give me a hug?"
+      },
+      {
+        "intent": "hug_me",
+        "text": "Can you hug me?"
+      },
+      {
+        "intent": "dont_care",
+        "text": "I don't care"
+      },
+      {
+        "intent": "dont_care",
+        "text": "who cares?"
+      },
+      {
+        "intent": "sorry",
+        "text": "Sorry"
+      },
+      {
+        "intent": "what_do_you_mean",
+        "text": "What do you mean?"
+      },
+      {
+        "intent": "you_are_wrong",
+        "text": "You're wrong."
+      },
+      {
+        "intent": "you_are_wrong",
+        "text": "that's a wrong answer"
+      },
+      {
+        "intent": "answer_me",
+        "text": "Reply me"
+      },
+      {
+        "intent": "answer_me",
+        "text": "respond to me"
+      },
+      {
+        "intent": "answer_me",
+        "text": "Answer my question"
+      },
+      {
+        "intent": "clofus_exclamation",
+        "text": "awesome"
+      },
+      {
+        "intent": "you_are_wrong",
+        "text": "That's not true"
+      }
+    ],
+    "regex_features": [],
+    "entity_synonyms": []
+  }
+}

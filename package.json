@@ -1,0 +1,51 @@
+{
+  "name": "clofus-chat-bot",
+  "version": "1.0.0",
+  "description": "Clofus Chatbot Platform",
+  "main": "server.js",
+  "scripts": {
+    "test": "node server.js"
+  },
+  "keywords": [
+    "website",
+    "tracking",
+    "analytics",
+    "clofus"
+  ],
+  "author": "kbalu",
+  "license": "ISC",
+  "dependencies": {
+    "bluebird": "^3.5.0",
+    "body-parser": "^1.17.1",
+    "bower": "^1.8.2",
+    "cheerio": "^0.22.0",
+    "concat-files": "^0.1.1",
+    "connect-timeout": "^1.8.0",
+    "crypto-js": "^3.1.9-1",
+    "express": "^4.15.2",
+    "gridfs-stream": "^1.1.1",
+    "handlebars": "^4.0.8",
+    "json2md": "^1.6.1",
+    "json2yaml": "^1.1.0",
+    "lodash": "^4.17.4",
+    "moment": "^2.18.1",
+    "mongoose": "^4.9.5",
+    "mongoose-deep-populate": "^3.0.0",
+    "mongoose-paginate": "^5.0.3",
+    "nconf": "^0.8.4",
+    "node-cmd": "^3.0.0",
+    "node-cron": "^1.2.1",
+    "node-handlebars": "^0.9.7",
+    "nodemailer": "^4.0.0",
+    "nodemailer-smtp-transport": "^2.7.4",
+    "path": "^0.12.7",
+    "query-string": "^4.3.2",
+    "request": "^2.81.0",
+    "rmdir": "^1.2.0",
+    "xml2js": "^0.4.19",
+    "yamljs": "^0.3.0"
+  },
+  "devDependencies": {
+    "grunt-contrib-uglify": "^2.3.0"
+  }
+}

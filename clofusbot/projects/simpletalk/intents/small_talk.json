@@ -1,0 +1,936 @@
+﻿{
+  "rasa_nlu_data": {
+    "common_examples": [
+      {
+        "text": "Who are you?",
+        "intent": "who_are_you",
+        "entities": []
+      },
+      {
+        "text": "who are you",
+        "intent": "who_are_you",
+        "entities": []
+      },
+      {
+        "text": "who are you",
+        "intent": "who_are_you",
+        "entities": []
+      },
+      {
+        "text": "who you are",
+        "intent": "who_are_you",
+        "entities": []
+      },
+      {
+        "text": "who am i talking to?",
+        "intent": "who_are_you",
+        "entities": []
+      },
+      {
+        "text": "who are you",
+        "intent": "who_are_you",
+        "entities": []
+      },
+      {
+        "text": "How old are you",
+        "intent": "how_old_are_you",
+        "entities": []
+      },
+      {
+        "text": "How young are you",
+        "intent": "how_old_are_you",
+        "entities": []
+      },
+      {
+        "text": "whats your age",
+        "intent": "how_old_are_you",
+        "entities": []
+      },
+      {
+        "text": "what is your age",
+        "intent": "how_old_are_you",
+        "entities": []
+      },
+      {
+        "text": "Youre bad",
+        "intent": "you_are_bad",
+        "entities": []
+      },
+      {
+        "text": "I don't like you",
+        "intent": "you_are_bad",
+        "entities": []
+      },
+      {
+        "text": "bad clofus",
+        "intent": "you_are_bad",
+        "entities": []
+      },
+      {
+        "text": "bad",
+        "intent": "you_are_bad",
+        "entities": []
+      },
+      {
+        "text": "Can you get smarter?",
+        "intent": "can_you_learn",
+        "entities": []
+      },
+      {
+        "text": "can you learn?",
+        "intent": "can_you_learn",
+        "entities": []
+      },
+      {
+        "text": "are you intelligent?",
+        "intent": "can_you_learn",
+        "entities": []
+      },
+      {
+        "text": "You're beautiful",
+        "intent": "you_are_beautiful",
+        "entities": []
+      },
+      {
+        "text": "You look good",
+        "intent": "you_are_beautiful",
+        "entities": []
+      },
+      {
+        "text": "you are charming",
+        "intent": "you_are_beautiful",
+        "entities": []
+      },
+      {
+        "text": "What's your birth date?",
+        "intent": "birth_date",
+        "entities": []
+      },
+      {
+        "text": "What's your date of birth?",
+        "intent": "birth_date",
+        "entities": []
+      },
+      {
+        "text": "when is your birthday",
+        "intent": "birth_date",
+        "entities": []
+      },
+      {
+        "text": "you are boring",
+        "intent": "oops",
+        "entities": []
+      },
+      {
+        "text": "you are crazy",
+        "intent": "oops",
+        "entities": []
+      },
+      {
+        "text": "that's bad",
+        "intent": "oops",
+        "entities": []
+      },
+      {
+        "text": "who is your boss?",
+        "intent": "clofus_boss",
+        "entities": []
+      },
+      {
+        "text": "who is your owner",
+        "intent": "clofus_boss",
+        "entities": []
+      },
+      {
+        "text": "who created you?",
+        "intent": "clofus_boss",
+        "entities": []
+      },
+      {
+        "text": "are you busy?",
+        "intent": "are_you_busy",
+        "entities": []
+      },
+      {
+        "text": "are you free?",
+        "intent": "are_you_busy",
+        "entities": []
+      },
+      {
+        "text": "are you there?",
+        "intent": "are_you_busy",
+        "entities": []
+      },
+      {
+        "text": "can you help me?",
+        "intent": "can_you_help_me",
+        "entities": []
+      },
+      {
+        "text": "I need help?",
+        "intent": "can_you_help_me",
+        "entities": []
+      },
+      {
+        "text": "could please help me?",
+        "intent": "can_you_help_me",
+        "entities": []
+      },
+      {
+        "text": "you are a chatbot",
+        "intent": "you_are_chatbot",
+        "entities": []
+      },
+      {
+        "text": "you are a machine",
+        "intent": "you_are_chatbot",
+        "entities": []
+      },
+      {
+        "text": "you are a circuit",
+        "intent": "you_are_chatbot",
+        "entities": []
+      },
+      {
+        "text": "you're fired",
+        "intent": "you_are_fired",
+        "entities": []
+      },
+      {
+        "text": "you're terminated",
+        "intent": "you_are_fired",
+        "entities": []
+      },
+      {
+        "text": "going to be terminated",
+        "intent": "you_are_fired",
+        "entities": []
+      },
+      {
+        "text": "you are funny",
+        "intent": "you_are_funny",
+        "entities": []
+      },
+      {
+        "text": "you are naughty",
+        "intent": "you_are_funny",
+        "entities": []
+      },
+      {
+        "text": "you are crazy",
+        "intent": "you_are_funny",
+        "entities": []
+      },
+      {
+        "text": "You are good",
+        "intent": "you_are_clever",
+        "entities": []
+      },
+      {
+        "text": "You're so clever",
+        "intent": "you_are_clever",
+        "entities": []
+      },
+      {
+        "text": "Are you happy?",
+        "intent": "are_you_happy",
+        "entities": []
+      },
+      {
+        "text": "do you feel happy?",
+        "intent": "are_you_happy",
+        "entities": []
+      },
+      {
+        "text": "happy?",
+        "intent": "are_you_happy",
+        "entities": []
+      },
+      {
+        "text": "tell me about your hobby",
+        "intent": "clofus_hobby",
+        "entities": []
+      },
+      {
+        "text": "what is your hobby",
+        "intent": "clofus_hobby",
+        "entities": []
+      },
+      {
+        "text": "what interests you so much?",
+        "intent": "clofus_hobby",
+        "entities": []
+      },
+      {
+        "text": "what you are interested in?",
+        "intent": "clofus_hobby",
+        "entities": []
+      },
+      {
+        "text": "are you hungry?",
+        "intent": "are_you_hungry",
+        "entities": []
+      },
+      {
+        "text": "do you feel hungry?",
+        "intent": "are_you_hungry",
+        "entities": []
+      },
+      {
+        "text": "Will you marry me?",
+        "intent": "marry_me",
+        "entities": []
+      },
+      {
+        "text": "marry me?",
+        "intent": "marry_me",
+        "entities": []
+      },
+      {
+        "text": "can you marry me?",
+        "intent": "marry_me",
+        "entities": []
+      },
+      {
+        "text": "are we friends?",
+        "intent": "are_we_friends",
+        "entities": []
+      },
+      {
+        "text": "am i your friend?",
+        "intent": "are_we_friends",
+        "entities": []
+      },
+      {
+        "text": "will you be my friend?",
+        "intent": "are_we_friends",
+        "entities": []
+      },
+      {
+        "text": "do you work for someone",
+        "intent": "clofus_work",
+        "entities": []
+      },
+      {
+        "text": "where do you work?",
+        "intent": "clofus_work",
+        "entities": []
+      },
+      {
+        "text": "where is your workplace?",
+        "intent": "clofus_work",
+        "entities": []
+      },
+      {
+        "text": "where do you work at?",
+        "intent": "clofus_work",
+        "entities": []
+      },
+      {
+        "text": "where are you working at?",
+        "intent": "clofus_work",
+        "entities": []
+      },
+      {
+        "text": "where are you from?",
+        "intent": "clofus_country",
+        "entities": []
+      },
+      {
+        "text": "You are coming from?",
+        "intent": "clofus_country",
+        "entities": []
+      },
+      {
+        "text": "which country you are from?",
+        "intent": "clofus_country",
+        "entities": []
+      },
+      {
+        "text": "which do you come from?",
+        "intent": "clofus_country",
+        "entities": []
+      },
+      {
+        "text": "Are you ready?",
+        "intent": "are_you_ready",
+        "entities": []
+      },
+      {
+        "text": "ready to talk?",
+        "intent": "are_you_ready",
+        "entities": []
+      },
+      {
+        "text": "ready to chat?",
+        "intent": "are_you_ready",
+        "entities": []
+      },
+      {
+        "text": "ready to speak?",
+        "intent": "are_you_ready",
+        "entities": []
+      },
+      {
+        "text": "Are you real?",
+        "intent": "are_you_real",
+        "entities": []
+      },
+      {
+        "text": "Are you alive?",
+        "intent": "are_you_real",
+        "entities": []
+      },
+      {
+        "text": "Where do you live?",
+        "intent": "where_clofus_live",
+        "entities": []
+      },
+      {
+        "text": "where are you located?",
+        "intent": "where_clofus_live",
+        "entities": []
+      },
+      {
+        "text": "your location?",
+        "intent": "where_clofus_live",
+        "entities": []
+      },
+      {
+        "text": "You're right.",
+        "intent": "you_are_right",
+        "entities": []
+      },
+      {
+        "text": "You are correct",
+        "intent": "you_are_right",
+        "entities": []
+      },
+      {
+        "text": "yes, You are correct",
+        "intent": "you_are_right",
+        "entities": []
+      },
+      {
+        "text": "Are you sure",
+        "intent": "are_you_sure",
+        "entities": []
+      },
+      {
+        "text": "Make sure",
+        "intent": "are_you_sure",
+        "entities": []
+      },
+      {
+        "text": "are you confident?",
+        "intent": "are_you_sure",
+        "entities": []
+      },
+      {
+        "text": "Talk to me",
+        "intent": "talk_to_me",
+        "entities": []
+      },
+      {
+        "text": "talk to me",
+        "intent": "talk_to_me",
+        "entities": []
+      },
+      {
+        "text": "Will you talk to me",
+        "intent": "talk_to_me",
+        "entities": []
+      },
+      {
+        "text": "Please talk to me",
+        "intent": "talk_to_me",
+        "entities": []
+      },
+      {
+        "text": "Are you there?",
+        "intent": "are_you_there",
+        "entities": []
+      },
+      {
+        "text": "you there?",
+        "intent": "are_you_there",
+        "entities": []
+      },
+      {
+        "text": "No problem",
+        "intent": "no_problem",
+        "entities": []
+      },
+      {
+        "text": "No probs",
+        "intent": "no_problem",
+        "entities": []
+      },
+      {
+        "text": "Not an issue",
+        "intent": "no_problem",
+        "entities": []
+      },
+      {
+        "text": "No worries",
+        "intent": "no_problem",
+        "entities": []
+      },
+      {
+        "text": "Not a issue",
+        "intent": "no_problem",
+        "entities": []
+      },
+      {
+        "text": "Thank you!",
+        "intent": "thank_you",
+        "entities": []
+      },
+      {
+        "text": "Well done!",
+        "intent": "thank_you",
+        "entities": []
+      },
+      {
+        "text": "good job",
+        "intent": "thank_you",
+        "entities": []
+      },
+      {
+        "text": "overall good job",
+        "intent": "thank_you",
+        "entities": []
+      },
+      {
+        "text": "You're welcome",
+        "intent": "you_are_welcome",
+        "entities": []
+      },
+      {
+        "text": "I am happy to help",
+        "intent": "you_are_welcome",
+        "entities": []
+      },
+      {
+        "text": "my pleasure",
+        "intent": "you_are_welcome",
+        "entities": []
+      },
+      {
+        "text": "Ha ha ha!",
+        "intent": "ha_ha",
+        "entities": []
+      },
+      {
+        "text": "Ha ha ha ha!",
+        "intent": "ha_ha",
+        "entities": []
+      },
+      {
+        "text": "He he he!",
+        "intent": "ha_ha",
+        "entities": []
+      },
+      {
+        "text": "He he he he!",
+        "intent": "ha_ha",
+        "entities": []
+      },
+      {
+        "text": "wow",
+        "intent": "clofus_exclamation",
+        "entities": []
+      },
+      {
+        "text": "what a wow",
+        "intent": "clofus_exclamation",
+        "entities": []
+      },
+      {
+        "text": "surpraising",
+        "intent": "clofus_exclamation",
+        "entities": []
+      },
+      {
+        "text": "nice",
+        "intent": "clofus_exclamation",
+        "entities": []
+      },
+      {
+        "text": "Bye-bye!",
+        "intent": "clofus_bye",
+        "entities": []
+      },
+      {
+        "text": "gud bye!",
+        "intent": "clofus_bye",
+        "entities": []
+      },
+      {
+        "text": "Bye!",
+        "intent": "clofus_bye",
+        "entities": []
+      },
+      {
+        "text": "Good evening!",
+        "intent": "clofus_wish",
+        "entities": []
+      },
+      {
+        "text": "Good morning!",
+        "intent": "clofus_wish",
+        "entities": []
+      },
+      {
+        "text": "Good night!",
+        "intent": "clofus_wish",
+        "entities": []
+      },
+      {
+        "text": "Hello!",
+        "intent": "greet",
+        "entities": []
+      },
+      {
+        "text": "Hello there!",
+        "intent": "greet",
+        "entities": []
+      },
+      {
+        "text": "hi clofus",
+        "intent": "greet",
+        "entities": []
+      },
+      {
+        "text": "hey clofus",
+        "intent": "greet",
+        "entities": []
+      },
+      {
+        "text": "hay clofus",
+        "intent": "greet",
+        "entities": []
+      },
+      {
+        "text": "clofus",
+        "intent": "greet",
+        "entities": []
+      },
+      {
+        "text": "How are you?",
+        "intent": "how_are_you",
+        "entities": []
+      },
+      {
+        "text": "How are you doing?",
+        "intent": "how_are_you",
+        "entities": []
+      },
+      {
+        "text": "how are you",
+        "intent": "how_are_you",
+        "entities": []
+      }, 
+      {
+        "text": "are you ok?",
+        "intent": "how_are_you",
+        "entities": []
+      },
+      {
+        "text": "Nice to meet you!",
+        "intent": "nice_to_meet_you",
+        "entities": []
+      },
+      {
+        "text": "Nice to see you!",
+        "intent": "nice_to_meet_you",
+        "entities": []
+      },
+      {
+        "text": "Its Nice to see you!",
+        "intent": "nice_to_meet_you",
+        "entities": []
+      },
+      {
+        "text": "What's up?",
+        "intent": "whats_up",
+        "entities": []
+      },
+      {
+        "text": "What's going on?",
+        "intent": "whats_up",
+        "entities": []
+      },
+      {
+        "text": "What's ahead?",
+        "intent": "whats_up",
+        "entities": []
+      },
+      {
+        "text": "yes",
+        "intent": "confirmation",
+        "entities": []
+      },
+      {
+        "text": "no",
+        "intent": "confirmation",
+        "entities": []
+      },
+      {
+        "text": "cancel",
+        "intent": "confirmation",
+        "entities": []
+      },
+      {
+        "text": "hold on",
+        "intent": "hold_on",
+        "entities": []
+      },
+      {
+        "text": "hang on",
+        "intent": "hold_on",
+        "entities": []
+      },
+      {
+        "text": "hang in there",
+        "intent": "hold_on",
+        "entities": []
+      },
+      {
+        "text": "Give me a hug!",
+        "intent": "hug_me",
+        "entities": []
+      },
+      {
+        "text": "Can you Give me a hug?",
+        "intent": "hug_me",
+        "entities": []
+      },
+      {
+        "text": "Can you hug me?",
+        "intent": "hug_me",
+        "entities": []
+      },
+      {
+        "text": "I don't care",
+        "intent": "dont_care",
+        "entities": []
+      },
+      {
+        "text": "who cares?",
+        "intent": "dont_care",
+        "entities": []
+      },
+      {
+        "text": "Sorry",
+        "intent": "sorry",
+        "entities": []
+      },
+      {
+        "text": "What do you mean?",
+        "intent": "what_do_you_mean",
+        "entities": []
+      },
+      {
+        "text": "You're wrong.",
+        "intent": "you_are_wrong",
+        "entities": []
+      },
+      {
+        "text": "that's a wrong answer",
+        "intent": "you_are_wrong",
+        "entities": []
+      },
+      {
+        "text": "Reply me",
+        "intent": "answer_me",
+        "entities": []
+      },
+      {
+        "text": "respond to me",
+        "intent": "answer_me",
+        "entities": []
+      },
+      {
+        "text": "Answer my question",
+        "intent": "answer_me",
+        "entities": []
+      },
+      {
+        "text": "awesome",
+        "intent": "clofus_exclamation",
+        "entities": []
+      },
+      {
+        "text": "That's not true",
+        "intent": "you_are_wrong",
+        "entities": []
+      },
+      {
+        "text": "topper student in class 10",
+        "intent": "topper",
+        "entities": []
+      },
+      {
+        "text": "Who is the topper in class 10",
+        "intent": "topper",
+        "entities": []
+      },
+      {
+        "text": "Who is the best student in class 10",
+        "intent": "topper",
+        "entities": []
+      },
+      {
+        "text": "Who is the current student topper in class 10",
+        "intent": "topper",
+        "entities": []
+      },
+      {
+        "text": "who is the topper",
+        "intent": "choose_class",
+        "entities": []
+      },
+      {
+        "text": "who is the best student",
+        "intent": "choose_class",
+        "entities": []
+      },
+      {
+        "text": "who is the current topper student",
+        "intent": "choose_class",
+        "entities": []
+      },
+      {
+        "text": "when is the next exam?",
+        "intent": "exam",
+        "entities": []
+      },
+      {
+        "text": "when is upcoming exam?",
+        "intent": "exam",
+        "entities": []
+      },
+      {
+        "text": "show my upcoming exam?",
+        "intent": "exam",
+        "entities": []
+      },
+      {
+        "text": "show my next exam?",
+        "intent": "exam",
+        "entities": []
+      },
+      {
+        "text": "when is the current exam?",
+        "intent": "exam",
+        "entities": []
+      },
+      {
+        "text": "sports day",
+        "intent": "sports",
+        "entities": []
+      },
+      {
+        "text": "show me when is the sports day",
+        "intent": "sports",
+        "entities": []
+      },
+      {
+        "text": "show me the sports day",
+        "intent": "sports",
+        "entities": []
+      },
+      {
+        "text": "when is the sports day?",
+        "intent": "sports",
+        "entities": []
+      },
+      {
+        "text": "display me the sports day?",
+        "intent": "sports",
+        "entities": []
+      },
+      {
+        "text": "display the sports day?",
+        "intent": "sports",
+        "entities": []
+      },
+      {
+        "text": "tell the sports day?",
+        "intent": "sports",
+        "entities": []
+      },
+      {
+        "text": "Display Todays Attendance",
+        "intent": "attendance",
+        "entities": []
+      },
+      {
+        "text": "Check Todays Attendance",
+        "intent": "attendance",
+        "entities": []
+      },
+      {
+        "text": "show Todays Attendance",
+        "intent": "attendance",
+        "entities": []
+      },
+      {
+        "text": "todays attendance percentage",
+        "intent": "attendance",
+        "entities": []
+      },
+      {
+        "text": "show me the attendance percentage",
+        "intent": "attendance",
+        "entities": []
+      },
+      {
+        "text": "what is the school strength today",
+        "intent": "attendance",
+        "entities": []
+      },
+      {
+        "text": "what's the school strength today",
+        "intent": "attendance",
+        "entities": []
+      },
+      {
+        "text": "who is best teacher",
+        "intent": "best_teacher",
+        "entities": []
+      },
+      {
+        "text": "who is the best teacher",
+        "intent": "best_teacher",
+        "entities": []
+      },
+      {
+        "text": "who is the best performing teacher",
+        "intent": "best_teacher",
+        "entities": []
+      },
+      {
+        "text": "best teacher",
+        "intent": "best_teacher",
+        "entities": []
+      },
+      {
+        "text": "worst teacher",
+        "intent": "worst_teacher",
+        "entities": []
+      },
+      {
+        "text": "worst performing teacher",
+        "intent": "worst_teacher",
+        "entities": []
+      },
+      {
+        "text": "who is the worst teacher",
+        "intent": "worst_teacher",
+        "entities": []
+      }
+    ]
+  }
+}

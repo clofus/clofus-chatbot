@@ -1,0 +1,14 @@
+{
+  "action_fingerprints": {
+    "action_listen": {
+      "slots": []
+    }
+  },
+  "rasa_core": "0.8.1",
+  "max_history": 3,
+  "ensemble_name": "rasa_core.policies.ensemble.SimplePolicyEnsemble",
+  "policy_names": [
+    "rasa_core.policies.memoization.MemoizationPolicy",
+    "clofusassistant.clofusbot.policy.RestaurantPolicy"
+  ]
+}
