@@ -27,7 +27,7 @@ The goal of this project is to build an opensource chat platform better than pro
 
 ## Setup project
 ```
-git clone https://github.com/paschmann/rasaui.git
+git clone https://github.com/clofus/clofus-chatbot.git
 
 npm install
 
