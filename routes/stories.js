@@ -30,7 +30,8 @@ module.exports = function (express, mongoose) {
                     .exec((err,agentdata)=>{
                         if(err) res.send(err);
                         else{
-                            agentdata.stories.push(storyid);
+                            agentdata.stories = agentdata.stories.concat([storyid]);
+                            //agentdata.stories.push(storyid);
                             agentdata.save((err,response)=>{
                                 if(err) res.send(err);
                                 else {
@@ -98,7 +99,8 @@ module.exports = function (express, mongoose) {
                    if(exists){
                     res.send({status:'Entity Already Exists'})
                    }else{
-                        agentdata.entities.push(newEntity);
+                        agentdata.entities = agentdata.entities.concat([newEntity]);
+                        //agentdata.entities.push(newEntity);
                         agentdata.save((err,result)=>{
                             if(err) res.send(err);
                             else{
