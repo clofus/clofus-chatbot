@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Chat</title>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.slim.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        .mytext {
+            border: 0;
+            border-radius: 40px;
+            padding: 12px;
+            background: rgba(0, 0, 0, 0);
+            margin-left: -18px;
+            margin-top: 2px;
+            color: black;
+            font-family: barlow;
+            font-weight: 500;
+            letter-spacing: .5px;
+            word-spacing: 1px;
+
+
+        }
+
+
+        ::-webkit-input-placeholder {
+            /* Edge */
+            color: red;
+        }
+
+        :-ms-input-placeholder {
+            /* Internet Explorer */
+            color: red;
+        }
+
+        ::placeholder {
+            color: red;
+        }
+
+        .text {
+            width: 75%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .text>p:first-of-type {
+            width: fit-content;
+            word-break: break-word;
+            margin-top: 5px;
+            margin-left: 1px;
+            line-height: 20px;
+            font-size: 15px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: 600;
+            color: rgb(0, 0, 0);
+            /* text-shadow: 0px 6px 6px #000000; */
+            text-align: left;
+            letter-spacing: .5px;
+            word-spacing: 1px;
+        }
+
+        .text>p:last-of-type {
+            width: 100%;
+            text-align: right;
+            color: silver;
+            margin-bottom: -7px;
+            margin-top: auto;
+        }
+
+        .text-l {
+            float: left;
+            padding: 12px;
+            width: fit-content;
+            background: white;
+            border-top-right-radius: 33px;
+            border-top-left-radius: 0px;
+            border-bottom-right-radius: 10px;
+            border-bottom-left-radius: 30px;
+            box-shadow: -3px 7px 5px #000000b5;
+        }
+
+        .text-r {
+            float: right;
+            padding-left: 10px;
+            border-radius: 40px;
+        }
+
+        /* you text */
+        .text1 {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .text1>p:first-of-type {
+              /* width: auto; */
+                /* word-break: break-word; */
+                margin-top: 30px;
+                margin-left: 212px;
+                line-height: 20px;
+                font-size: 15px;
+                font-family: Arial, Helvetica, sans-serif;
+                font-weight: 600;
+                color: rgb(0, 255, 243);
+                /* text-shadow: 0px 6px 6px #000000; */
+                text-align: left;
+                letter-spacing: .5px;
+                word-spacing: 1px;
+                background: black;
+                padding: 19px;
+                border-top-right-radius: 0px;
+                border-top-left-radius: 30px;
+                border-bottom-right-radius: 33px;
+                border-bottom-left-radius: 10px;
+                box-shadow: -3px 7px 5px #000000a3;
+                /* margin-right: 12px; */
+                        
+        }
+
+        .text1>p:last-of-type {
+            width: 100%;
+            text-align: right;
+            color: silver;
+            margin-bottom: -7px;
+            margin-top: auto;
+        }
+
+        .text1-l {
+            float: right;
+            padding-right: 10px;
+        }
+
+        .text1-r {
+            float: right;
+            padding-right: 10px;
+            border-radius: 40px;
+         
+            text-align:right;
+        }
+
+        .avatar {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 25%;
+            float: left;
+            padding-right: 10px;
+        }
+
+        .macro {
+            margin-top: 30px;;
+            width: 60%;
+            border-radius: 5px;
+            padding: 2px;
+            display: flex;
+        }
+
+        .msj-rta {
+            float: right;
+            /* width: fit-content;
+            background: black;
+            border-top-right-radius: 0px;
+            border-top-left-radius: 30px;
+            border-bottom-right-radius: 33px;
+            border-bottom-left-radius: 10px;
+            margin-right: 12px; */
+        }
+
+
+        .msj {
+            /* float: left;
+            width: fit-content;
+            background: white;
+            border-top-right-radius: 33px;
+            border-top-left-radius: 0px;
+            border-bottom-right-radius: 10px;
+            border-bottom-left-radius: 30px; */
+        }
+
+        .frame {
+            background: #585855;
+            height: 612px;
+            overflow: hidden;
+            padding: 0;
+            margin-left: 500px;
+            margin-top: 100px;
+            border-radius: 12px;
+
+        }
+
+        .frame>div:last-of-type {
+            position: absolute;
+            bottom: -4px;
+            width: 110%;
+            display: flex;
+        }
+
+        body>div>div>div:nth-child(2)>span {
+            background: rgb(245, 245, 245);
+            padding: 11px;
+            font-size: 24px;
+            border-radius: 50%;
+            margin-bottom: -1%;
+            margin-left: -24%;
+            cursor: pointer;
+            /* background: linear-gradient(90deg, rgb(255, 239, 239) 0%, rgb(128, 128, 128) 0%, rgba(247, 247, 247, 0.9920343137254902) 100%); */
+            background-color: #989898;
+        }
+
+        body>div>div>div.msj-rta.macro {
+            margin: auto;
+            margin-left: 2%;
+            margin-bottom: 2%;
+            padding: 0px;
+            border-radius: 46px;
+            background: linear-gradient(90deg, rgba(0, 0, 0, 0) 0%, rgb(243, 227, 227) 0%, rgba(194, 187, 187, 0.32) 100%);
+        }
+
+        ul {
+            width: 100%;
+            list-style-type: none;
+            padding: 12px;
+            position: absolute;
+            bottom: 45px;
+            display: flex;
+            flex-direction: column;
+            top: 0;
+            overflow-y: scroll;
+            scroll-behavior: smooth;
+            margin-left: 10px;
+        }
+
+        .msj:before {
+            width: 0;
+            height: 0;
+            content: "";
+            top: 0px;
+            left: 2px;
+            position: relative;
+            border-style: solid;
+            border-width: 0 13px 13px 0;
+            border-color: transparent #ffffff transparent transparent;
+
+        }
+
+        .msj-rta:after {
+            width: 0;
+            height: 0;
+            content: "";
+            top: 30px;
+            left: -12px;
+            position: relative;
+            border-style: solid;
+            border-width: 13px 13px 0 0;
+            border-color: rgb(0, 0, 0) transparent transparent transparent;
+        }
+
+        input:focus {
+            outline: none;
+        }
+
+        ::-webkit-input-placeholder {
+            /* Chrome/Opera/Safari */
+            color: #03030385;
+        }
+
+        ::-moz-placeholder {
+            /* Firefox 19+ */
+            color: #03030385;
+        }
+
+        :-ms-input-placeholder {
+            /* IE 10+ */
+            color: #03030385;
+        }
+
+        :-moz-placeholder {
+            /* Firefox 18- */
+            color: #03030385;
+        }
+
+        .fa-comment-alt:before {
+            margin: 2px;
+            padding: 10px;
+            font-size: 20px;
+            opacity: 0.9;
+            margin-top: 6px;
+        }
+
+        .fa-arrow-alt-circle-right:hover {
+            background-color: grey;
+        }
+
+        /* width */
+        ::-webkit-scrollbar {
+            width: 1px;
+        }
+
+        /* Track */
+        ::-webkit-scrollbar-track {
+            box-shadow: inset 0 0 5px rgba(128, 128, 128, 0);
+            border-radius: 5px;
+        }
+
+        /* Handle */
+        ::-webkit-scrollbar-thumb {
+            background: rgba(199, 195, 195, 0);
+            border-radius: 150px;
+        }
+
+        /* Handle on hover */
+        ::-webkit-scrollbar-thumb:hover {
+            background: #14141400;
+        }
+
+        body {
+            background: white;
+            width: 2048px;
+            position: relative;
+            margin-left: -9%;
+            margin-top: -7%;
+        }
+        .text1div{
+                    width: fit-content;
+                    border-radius: 12px;
+                    margin-right: 12px;
+                    background-color: #989898;
+        }
+
+        .macro1{
+            margin-top: 33px;
+            width: 77%;
+            border-radius: 50px;
+            padding: 0px;
+            display: flex;
+            margin: 10px;
+        }
+
+        .rightmacro{
+            margin-top: 33px;
+            width: auto;
+            border-radius: 50px;
+            padding: 0px;
+            display: flex;
+            margin: 10px;
+        }
+.fa-close{
+    margin-left:95%;
+    margin-top:1%;
+    font-size: 20px;
+    color:white;
+   cursor: pointer;
+
+}
+
+    </style>
+</head>
+
+<body>
+        
+    <div class="col-sm-3 col-sm-offset-4 frame">
+            <!-- <i class="fa fa-close"></i> -->
+        <ul></ul>
+        <div> 
+            <div class="text1div macro1 far fa-comment-alt">
+                <div class="text text-r">
+                    <input class="mytext" id="message" placeholder="Talk to me..." />
+                </div>
+
+            </div>
+            <div style="padding:10px;">
+                <span class="fas fa-arrow-alt-circle-right"></span>
+                <!-- <span class="fa fa-paper-plane"></span> -->
+            </div>
+        </div>
+    </div>
+    <script>
+        var me = {};
+        me.avatar = " ";
+        // https://clofus93923-clofusdemoschool.s3.amazonaws.com/clofus%2FMsg-4035
+
+        var you = {};
+        you.avatar = "";
+        // https://clofus93923-clofusdemoschool.s3.amazonaws.com/clofus%2FMsg-9809
+        function formatAMPM(date) {
+            var hours = date.getHours();
+            var minutes = date.getMinutes();
+            var ampm = hours >= 12 ? 'PM' : 'AM';
+            hours = hours % 12;
+            hours = hours ? hours : 12; // the hour '0' should be '12'
+            minutes = minutes < 10 ? '0' + minutes : minutes;
+            var strTime = hours + ':' + minutes + ' ' + ampm;
+            return strTime;
+        }
+
+        //-- No use time. It is a javaScript effect.
+        function insertChat(who, text, time) {
+            if (time === undefined) {
+                time = 0;
+            }
+            var control = "";
+            var date = formatAMPM(new Date());
+
+            if (who == "me") {
+                control = '<li style="width:100%">' +
+                    '<div class="msj macro">' +
+                    '<div><img  src="' + me.avatar + '" /></div>' +
+                    '<div class="text text-l">' +
+                    '<p>' + text + '</p>' +
+                    '<p><small></small></p>' +
+                    '</div>' +
+                    '</div>' +
+                    '</li>';
+            } else {
+                control = '<li style="width:100%;">' +
+                    '<div class="msj-rta rightmacro">' +
+                    '<div class="text1 text1-r">' +
+                    '<p>' + text + '</p>' +
+                    '<p><small1></small1></p>' +
+                    '</div>' 
+                    '</li>';
+            }
+            setTimeout(
+                function () {
+                    $("ul").append(control).scrollTop($("ul").prop('scrollHeight'));
+                }, time);
+
+        }
+
+        function resetChat() {
+            $("ul").empty();
+        }
+
+        $(".mytext").on("keydown", function(e){
+            if (e.which == 13){
+               
+                var sendmsg = { message: $(this).val() };
+                $('#message').val('');
+               
+                 $.ajax({
+
+                        url: 'http://18.222.102.151:5005/webhooks/rest/webhook',
+                        data: JSON.stringify(sendmsg),
+                        headers: {  'Access-Control-Request-Headers': 'origin, x-requested-with'},
+                        type: 'POST',
+                        crossDomain: true,
+                        dataType: 'json',
+                        success: function(response) { 
+                            console.log(response);
+                            if(response.length != 0) {
+                            insertChat("me", response[0].text, 100);
+                            } else {
+                                insertChat("me", "Say it once again", 100);
+                            }
+                        },
+                        error: function(err) {
+
+                        },
+                        beforeSend: function() {
+                            insertChat("you", sendmsg.message, 100);
+                        }
+
+                        });
+                                                        
+            }
+        });
+
+       
+
+      
+         
+
+        $('body > div > div > div:nth-child(2) > span').click(function () {
+            $(".mytext").trigger({ type: 'keydown', which: 13, keyCode: 13 });
+        })
+
+        //-- Clear Chat
+        resetChat();
+
+        //-- Print Messages
+     insertChat("me", "Hi , How can i help you.", 200);
+        
+       //-- NOTE: No use time on insertChat.
+
+
+
+    </script>
+</body>
+
+</html>
