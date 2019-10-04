@@ -2,6 +2,10 @@
 Clofus® Chat Bot Platform is a web application built using latest frameworks and database such as nodejs, expressjs, vuejs, mongodb etc., on top of Rasa NLU and Rasa Core.
 Clofus® Chat Bot Platform provides a web application to quickly and easily be able to create agents, define intents, entities and stories, It also provides some convenience features for Rasa NLU, like training your models testing chat interface, multi domain support.
 
+# Demo
+[Live Chat Demo](https://clofus.github.io/clofus-chatbot/)
+
+
 ## Goal
 The goal of this project is to build an opensource chat platform better than proprietary Google DialogFlow, Alexa etc., using machine learning multi turn story conversations without using any proprietary API
 
