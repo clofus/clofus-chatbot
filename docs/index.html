@@ -905,7 +905,7 @@
                 if (response.length != 0) {
                     $(".thinking").parents('.macro').fadeOut();
                     if (notified == false) {
-                        insertChat("me", "<div class='intimate'><div class='form-group'></div><div id='contactform'><form method='post'><div class='form-group'><textarea class='textarea' type='text' name='notes' class='forminput' placeholder='Please Enter Email and Message...' autocomplete='off'/></textarea></div><div style='margin-bottom:-6px;'><button class='submit' id='submitEmail'>Submit</button></div></form></div></div>", 100);
+                        //insertChat("me", "<div class='intimate'><div class='form-group'></div><div id='contactform'><form method='post'><div class='form-group'><textarea class='textarea' type='text' name='notes' class='forminput' placeholder='Please Enter Email and Message...' autocomplete='off'/></textarea></div><div style='margin-bottom:-6px;'><button class='submit' id='submitEmail'>Submit</button></div></form></div></div>", 100);
                     }
                     insertChat("me", response.data, 300);
                     $(".intimate").parents('.macro').fadeOut();
@@ -938,7 +938,7 @@
     resetChat();
 
     //-- Print Messages
-    insertChat("me", "<div class='intimate'><div class='form-group'><b style='font-size:20px;color:black;'>Hi , How can i help you.</b></div><div id='contactform'><form method='post'><div class='form-group'><textarea class='textarea' type='text' name='notes' class='forminput' placeholder='Please Enter Email and Message...' autocomplete='off'/></textarea></div><div style='margin-bottom:-6px;'><button class='submit' id='submitEmail'>Submit</button></div></form></div></div>", 200);
+    //insertChat("me", "<div class='intimate'><div class='form-group'><b style='font-size:20px;color:black;'>Hi , How can i help you.</b></div><div id='contactform'><form method='post'><div class='form-group'><textarea class='textarea' type='text' name='notes' class='forminput' placeholder='Please Enter Email and Message...' autocomplete='off'/></textarea></div><div style='margin-bottom:-6px;'><button class='submit' id='submitEmail'>Submit</button></div></form></div></div>", 200);
     insertChat("me", "<span style='width:100px;'>Now , I can understand Multiple language like English, Arabic, Chinese, etc...,</span>", 250);
 
     //Email/Feedback send
