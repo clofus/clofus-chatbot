@@ -895,10 +895,10 @@
 
 
         $.ajax({
-
             url: 'https://livechat.clofus.com/livechat',
-            data:{"sender":"f8b7d2b1-87c4-4198-b945-9ae830485a5b", "message":sendmsg.message},
-            type: 'GET',
+            data: JSON.stringify({"sender":"f8b7d2b1-87c4-4198-b945-9ae830485a5b", "message":sendmsg.message}),
+            type: 'POST',
+            contentType: "application/json",
             dataType: 'json',
             success: function (response) {
                 console.log("Rasaresponse", response);
