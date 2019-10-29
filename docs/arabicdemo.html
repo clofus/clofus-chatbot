@@ -1,0 +1,1033 @@
+
+
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.slim.min.js"></script>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<script src="https://kit.fontawesome.com/a076d05399.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.css"></script> -->
+<style>
+    html,
+    .livechat {
+        min-height: 100%;
+
+    }
+
+    .livechat {
+
+        display: none;
+    }
+
+    .mytext {
+        border: 0;
+        border-radius: 40px;
+        padding: 15px;
+        background: rgba(0, 0, 0, 0);
+        margin-left: 10%;
+        margin-top: 0px;
+        color: black;
+        font-family: Source Sans Pro, Arial, sans-serif;
+        font-weight: 400;
+        font-size: 15px;
+        letter-spacing: .5px;
+        word-spacing: 1px;
+    }
+
+
+    ::-webkit-input-placeholder {
+        /* Edge */
+        color: red;
+    }
+
+    :-ms-input-placeholder {
+        /* Internet Explorer */
+        color: red;
+    }
+
+    ::placeholder {
+        color: red;
+    }
+
+    .text {
+        width: 75%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .text>p:first-of-type {
+        width: fit-content;
+        word-break: break-word;
+        margin-top: 1px;
+        margin-left: 1px;
+        margin-bottom: 7px;
+        line-height: 20px;
+        font-size: 15px;
+        font-family: Source Sans Pro, Arial, sans-serif;
+        font-weight: 400;
+        color: rgb(0, 0, 0);
+        /* text-shadow: 0px 6px 6px #000000; */
+        text-align: left;
+        letter-spacing: .5px;
+        word-spacing: 1px;
+    }
+
+    .text>p:last-of-type {
+        width: 100%;
+        text-align: right;
+        color: silver;
+        margin-bottom: -7px;
+        margin-top: auto;
+    }
+
+    .text-l {
+        float: left;
+        padding: 12px;
+        width: fit-content;
+        background: white;
+        border-top-right-radius: 6px;
+        border-top-left-radius: 0px;
+        border-bottom-right-radius: 6px;
+        border-bottom-left-radius: 6px;
+        /* box-shadow: -3px 7px 5px #000000b5; */
+    }
+
+    .text-r {
+        float: right;
+        padding-left: 10px;
+        border-radius: 40px;
+    }
+
+    /* you text */
+    .text1 {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .text1>p:first-of-type {
+        /* width: auto; */
+        /* word-break: break-word; */
+        margin-top: 30px;
+        /* margin-left: 248px; */
+        line-height: 20px;
+        font-size: 15px;
+        font-family: Source Sans Pro, Arial, sans-serif;
+        font-weight: 400;
+        color: rgb(247, 247, 247);
+        text-align: left;
+        letter-spacing: .5px;
+        word-spacing: 1px;
+        background: #45A4EC;
+        padding: 17px;
+        padding-top: 13px;
+        padding-bottom: 13px;
+        padding-right: auto;
+        border-top-right-radius: 0px;
+        border-top-left-radius: 6px;
+        border-bottom-right-radius: 6px;
+        border-bottom-left-radius: 6px;
+        /* width: auto; */
+        word-break: break-word;
+    }
+
+    .text1>p:last-of-type {
+        width: 100%;
+        text-align: right;
+        color: silver;
+        margin-bottom: -7px;
+        margin-top: auto;
+    }
+
+    .text1-l {
+        float: right;
+        padding-right: 10px;
+    }
+
+    .text1-r {
+        float: right;
+        padding-right: 10px;
+        border-radius: 40px;
+
+        text-align: right;
+    }
+
+    .avatar {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 25%;
+        float: left;
+        padding-right: 10px;
+    }
+
+    .macro {
+        margin-top: 30px;
+        width: fit-content;
+        border-radius: 5px;
+        padding: 2px;
+        display: flex;
+    }
+
+    .msj-rta {
+        float: right;
+        /* width: fit-content;
+            background: black;
+            border-top-right-radius: 0px;
+            border-top-left-radius: 30px;
+            border-bottom-right-radius: 33px;
+            border-bottom-left-radius: 10px;
+            margin-right: 12px; */
+    }
+
+
+    .msj {
+        /* float: left;
+            width: fit-content;
+            background: white;
+            border-top-right-radius: 33px;
+            border-top-left-radius: 0px;
+            border-bottom-right-radius: 10px;
+            border-bottom-left-radius: 30px; */
+    }
+
+    .frame {
+        background-color: #63d471;
+        background-image: linear-gradient(322deg, #63d471 30%, #233329 100%);
+        height: calc(100% - 80px);
+        overflow: hidden;
+        padding: 0;
+        border-radius: 12px;
+        margin-top: 3%;
+        margin-left: 34%;
+    }
+
+    .frame>div:last-of-type {
+        position: absolute;
+        bottom: -4px;
+        width: 110%;
+        display: flex;
+    }
+
+    .livechat>div>div>div:nth-child(2)>span {
+        background: rgb(245, 245, 245);
+        padding: 11px;
+        font-size: 24px;
+        border-radius: 50%;
+        margin-bottom: -1%;
+        margin-left: -24%;
+        cursor: pointer;
+        /* background: linear-gradient(90deg, rgb(255, 239, 239) 0%, rgb(128, 128, 128) 0%, rgba(247, 247, 247, 0.9920343137254902) 100%); */
+        background-color: #989898;
+    }
+
+    .livechat>div>div>div.msj-rta.macro {
+        margin: auto;
+        margin-left: 2%;
+        margin-bottom: 2%;
+        padding: 0px;
+        border-radius: 46px;
+        background: linear-gradient(90deg, rgba(0, 0, 0, 0) 0%, rgb(243, 227, 227) 0%, rgba(194, 187, 187, 0.32) 100%);
+    }
+
+    .livechatul {
+        width: 95%;
+        list-style-type: none;
+        padding: 12px;
+        position: absolute;
+        bottom: 45px;
+        display: flex;
+        flex-direction: column;
+        top: 68px;
+        overflow-y: scroll;
+        scroll-behavior: smooth;
+        margin-left: 10px;
+    }
+
+    .msj:before {
+        width: 0;
+        height: 0;
+        content: "";
+        top: 0px;
+        left: 2px;
+        position: relative;
+        border-style: solid;
+        border-width: 0 13px 13px 0;
+        border-color: transparent #ffffff transparent transparent;
+
+    }
+
+    .msj-rta:after {
+        width: 0;
+        height: 0;
+        content: "";
+        top: 30px;
+        left: -12px;
+        position: relative;
+        border-style: solid;
+        border-width: 13px 13px 0 0;
+        border-color: #45A4EC transparent transparent transparent;
+    }
+
+    input:focus {
+        outline: none;
+    }
+
+    ::-webkit-input-placeholder {
+        /* Chrome/Opera/Safari */
+        color: #03030385;
+    }
+
+    ::-moz-placeholder {
+        /* Firefox 19+ */
+        color: #03030385;
+    }
+
+    :-ms-input-placeholder {
+        /* IE 10+ */
+        color: #03030385;
+    }
+
+    :-moz-placeholder {
+        /* Firefox 18- */
+        color: #03030385;
+    }
+
+    .fa-comment-alt:before {
+        margin: 1%;
+        padding: 3%;
+        font-size: 20px;
+        opacity: 0.9;
+        margin-top: 0%;
+        position: absolute;
+    }
+
+    .fa-arrow-alt-circle-right {
+        background-color: #fdfdfd;
+        font-size: 30px;
+        padding: 10px;
+        border-radius: 30px;
+        margin-left: -16px;
+        color: #45A4EC;
+
+
+
+    }
+
+    /* width */
+    ::-webkit-scrollbar {
+        width: 1px;
+    }
+
+    /* Track */
+    ::-webkit-scrollbar-track {
+        box-shadow: inset 0 0 5px rgba(128, 128, 128, 0);
+        border-radius: 5px;
+    }
+
+    /* Handle */
+    ::-webkit-scrollbar-thumb {
+        background: rgba(199, 195, 195, 0);
+        border-radius: 150px;
+    }
+
+    /* Handle on hover */
+    ::-webkit-scrollbar-thumb:hover {
+        background: #14141400;
+    }
+
+    .livechat {
+        background: rgba(82, 76, 76, 0.22);
+        width: 2048px;
+        position: relative;
+        margin-left: -9%;
+        margin-top: -7%;
+
+    }
+
+    .text1div {
+        width: fit-content;
+        border-radius: 12px;
+        margin-right: 12px;
+        background-color: #fdfdfd;
+    }
+
+    .macro1 {
+        /* margin-top: -77%; */
+        width: 77%;
+        border-radius: 50px;
+        padding: 0px;
+        display: flex;
+        margin: 2%;
+    }
+
+    .rightmacro {
+        margin-top: 0px;
+        width: auto;
+        border-radius: 50px;
+        padding: 0px;
+        display: flex;
+        margin-bottom: 0px;
+
+    }
+
+    #overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 2000;
+        background-color: rgba(12, 12, 12, 0.8);
+        /*dim the background*/
+        /* opacity: .8; */
+        -webkit-animation: fadein 2s;
+        /* Safari, Chrome and Opera > 12.1 */
+        -moz-animation: fadein 2s;
+        /* Firefox < 16 */
+        -ms-animation: fadein 2s;
+        /* Internet Explorer */
+        -o-animation: fadein 2s;
+        /* Opera < 12.1 */
+        animation: fadein 2s;
+    }
+
+    @keyframes fadein {
+        from {
+            opacity: 0;
+        }
+
+        to {
+            opacity: 1;
+        }
+    }
+
+    .fa-times {
+        position: absolute;
+        top: 8px;
+        right: 16px;
+        font-size: 30px;
+        color: rgba(255, 255, 255, 0.842);
+        cursor: pointer;
+        z-index: 2000;
+
+    }
+
+    .forminput {
+        font-size: 15px;
+        font-weight: 400;
+        font-family: Source Sans Pro, Arial, sans-serif;
+        color: black;
+        border-radius: 7px;
+        padding: 8px;
+        border: solid 0px black;
+        background: rgba(0, 0, 0, 0);
+        box-shadow: 0px 1px 6px 0px;
+        resize: vertical;
+    }
+
+    .submit {
+        font-size: 13px;
+        font-weight: 400;
+        font-family: Source Sans Pro, Arial, sans-serif;
+        color: #fff;
+        border-radius: 20px;
+        padding: 8px;
+        outline: none;
+        /* margin-left: 1%; */
+        background: #45A4EC;
+        opacity: 0.8;
+        width: 100%;
+        border: 1px solid;
+    }
+
+    .submit:hover {
+        opacity: 1;
+    }
+
+    .textarea {
+        width: 98%;
+        height: 100px;
+        min-height: 100px;
+        font-size: 15px;
+        font-weight: 400;
+        font-family: Source Sans Pro, Arial, sans-serif;
+        color: black;
+        border-radius: 7px;
+        padding: 8px;
+        border: solid 0px black;
+        background: rgba(0, 0, 0, 0);
+        box-shadow: 0px 1px 6px 0px;
+        resize: vertical;
+    }
+
+    .header {
+        padding: 0px;
+        text-align: center;
+        color: #fff;
+        font-size: 35px;
+        font-family: Source Sans Pro, Arial, sans-serif;
+        font-weight: 1000;
+        border: solid 0px;
+        border-radius: 4px;
+        margin-top: 3%;
+        /* margin-bottom: 0%; */
+        /* margin-left: 33%; */
+        /* position: fixed; */
+        /* background-color: black; */
+        /* background-color: #45a4ec; */
+        /* background-image: linear-gradient(353deg, #45a4ec -7%, #041e31 100%); */
+
+    }
+
+
+
+
+    /* Extra small devices (phones, 768px and down) */
+    @media only screen and (max-width: 768px) {
+        .frame {
+            background-color: #63d471;
+            background-image: linear-gradient(322deg, #63d471 30%, #233329 100%);
+            height: 90%;
+            width: 90%;
+            overflow: hidden;
+            border-radius: 15px;
+            margin-top: 10%;
+            margin-left: 5%;
+        }
+
+        .macro1 {
+            /* margin-top: -77%; */
+            width: 77%;
+            border-radius: 50px;
+            padding: 0px;
+            display: flex;
+            margin: 2%;
+            height: 15%;
+        }
+
+        .frame>div:last-of-type {
+            position: absolute;
+            bottom: -4px;
+            width: 104%;
+            display: flex;
+        }
+
+        .mytext {
+            border: 0;
+            border-radius: 40px;
+            padding: 15px;
+            background: rgba(0, 0, 0, 0);
+            margin-left: -45px;
+            margin-top: 1px;
+            color: black;
+            font-family: Source Sans Pro, Arial, sans-serif;
+            font-weight: 400;
+            font-size: 15px;
+            letter-spacing: .5px;
+            word-spacing: 1px;
+        }
+
+        .fa-comment-alt:before {
+            content: "\f27a";
+            top: 21%;
+        }
+
+        .textarea {
+            width: 179px;
+            height: 67px;
+            font-size: 15px;
+            font-weight: 400;
+            font-family: Source Sans Pro, Arial, sans-serif;
+            color: black;
+            border-radius: 7px;
+            padding: 8px;
+            border: solid 0px black;
+            background: rgba(0, 0, 0, 0);
+            box-shadow: 0px 1px 6px 0px;
+
+        }
+
+        .fa-arrow-alt-circle-right {
+            background-color: #fdfdfd;
+            font-size: 30px;
+            padding: 10px;
+            border-radius: 30px;
+            margin-left: -11px;
+            margin-top: -2px;
+            color: #45A4EC;
+        }
+
+
+        .header {
+            padding: 0px;
+            text-align: center;
+            color: #fff;
+            font-size: 150%;
+            font-family: Source Sans Pro, Arial, sans-serif;
+            font-weight: 1000;
+            border: solid 0px;
+            border-radius: 4px;
+            margin-top: 5%;
+            /* margin-bottom: 5%;
+            margin-left: -9%;
+            position: absolute; */
+
+        }
+
+        .headerdiv {
+            margin-top: 6px;
+            margin-left: -25px;
+        }
+
+        .livechatul {
+            width: 98%;
+            list-style-type: none;
+            padding: 12px;
+            position: absolute;
+            bottom: 45px;
+            display: flex;
+            flex-direction: column;
+            top: 63px;
+            overflow-y: scroll;
+            scroll-behavior: smooth;
+            margin-left: 10px;
+        }
+
+        .fa-times:before {
+            content: "\f00d";
+            font-size: 25px;
+        }
+    }
+
+    /* Medium devices (landscape tablets, 768px and 1024px) */
+    @media only screen and (min-width: 768px) and (max-width: 1024px) {
+        .frame {
+            background-color: #63d471;
+            background-image: linear-gradient(322deg, #63d471 30%, #233329 100%);
+            height: 90%;
+            overflow: hidden;
+            border-radius: 15px;
+            margin-top: 7%;
+            margin-left: 39px;
+            width: 90%;
+        }
+
+        .mytext {
+            border: 0;
+            border-radius: 40px;
+            padding: 15px;
+            background: rgba(0, 0, 0, 0);
+            margin-left: -24%;
+            margin-top: 0px;
+            color: black;
+            font-family: Source Sans Pro, Arial, sans-serif;
+            font-weight: 400;
+            font-size: 15px;
+            letter-spacing: .5px;
+            word-spacing: 1px;
+        }
+
+        .fa-comment-alt:before {
+            content: "\f27a";
+            top: 9%;
+        }
+
+        .textarea {
+            width: 300px;
+            height: 100px;
+            font-size: 15px;
+            font-weight: 400;
+            font-family: Source Sans Pro, Arial, sans-serif;
+            color: black;
+            border-radius: 7px;
+            padding: 8px;
+            border: solid 0px black;
+            background: rgba(0, 0, 0, 0);
+            box-shadow: 0px 1px 6px 0px;
+
+        }
+
+        .frame>div:last-of-type {
+            position: absolute;
+            bottom: -4px;
+            width: 115%;
+            display: flex;
+        }
+
+        .fa-arrow-alt-circle-right {
+            background-color: #fdfdfd;
+            font-size: 30px;
+            padding: 9px;
+            border-radius: 30px;
+            margin-left: -16px;
+            margin-top: 20%;
+            color: #45A4EC;
+        }
+
+    }
+
+
+    /* Medium devices (landscape tablets, 1024px and 1300px*/
+    @media only screen and (min-width: 1024px) and (max-width: 1300px) {
+        .frame {
+            background-color: #63d471;
+            background-image: linear-gradient(322deg, #63d471 30%, #233329 100%);
+            height: 90%;
+            overflow: hidden;
+            border-radius: 15px;
+            margin-top: 7%;
+            margin-left: 52px;
+            width: 90%;
+        }
+
+        .mytext {
+            border: 0;
+            border-radius: 40px;
+            padding: 15px;
+            background: rgba(0, 0, 0, 0);
+            margin-left: -27%;
+            margin-top: 0px;
+            color: black;
+            font-family: Source Sans Pro, Arial, sans-serif;
+            font-weight: 400;
+            font-size: 15px;
+            letter-spacing: .5px;
+            word-spacing: 1px;
+        }
+
+        .fa-comment-alt:before {
+            content: "\f27a";
+            top: 5%;
+            left: 3px;
+        }
+
+        .textarea {
+            width: 300px;
+            height: 100px;
+            font-size: 15px;
+            font-weight: 400;
+            font-family: Source Sans Pro, Arial, sans-serif;
+            color: black;
+            border-radius: 7px;
+            padding: 8px;
+            border: solid 0px black;
+            background: rgba(0, 0, 0, 0);
+            box-shadow: 0px 1px 6px 0px;
+
+        }
+
+        .frame>div:last-of-type {
+            position: absolute;
+            bottom: -4px;
+            width: 115%;
+            display: flex;
+        }
+
+        .fa-arrow-alt-circle-right {
+            background-color: #fdfdfd;
+            font-size: 30px;
+            padding: 12px;
+            border-radius: 30px;
+            margin-left: -16px;
+            margin-top: 20%;
+            color: #45A4EC;
+        }
+
+        .fa-times:before {
+            content: "\f00d";
+            margin-left: 71%;
+            font-size: 30px;
+
+        }
+
+        .livechatul {
+            width: 91%;
+            list-style-type: none;
+            padding: 12px;
+            position: absolute;
+            bottom: 45px;
+            display: flex;
+            flex-direction: column;
+            top: 0;
+            overflow-y: scroll;
+            scroll-behavior: smooth;
+            margin-left: 26px;
+        }
+
+    }
+
+    .headerdiv {
+        margin-top: 6px;
+    }
+</style>
+
+
+<div class="livechat">
+    <div id="overlay">
+        <!-- <p style="margin-bottom:5px" class="fa fa-times" aria-hidden="true" id="closeoverlay"></p> -->
+        <div class="col-sm-4 col-sm-offset-4 frame">
+            <div>
+                <div>
+                    <h3 class="header">Clofus AI Chat</h3>
+                </div>
+                <div class="headerdiv">
+                    <p class="fa fa-times" style="margin-top: 0%;font-size: 140%;" aria-hidden="true" id="closeoverlay">
+                    </p>
+                </div>
+            </div>
+            <!-- <p class="fa fa-times" aria-hidden="true" id="closeoverlay"></p> -->
+            <ul class="livechatul"></ul>
+            <div>
+                <div class="text1div macro1 far fa-comment-alt">
+                    <div class="text text-r">
+                        <input name="messagetxtbox" class="mytext" id="message" placeholder="Talk to me..." />
+                    </div>
+                </div>
+                <div style="padding:9px; cursor: pointer;" id="send">
+                    <span class="fas fa-arrow-alt-circle-right"></span>
+                    <!-- <span class="fa fa-paper-plane"></span> -->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+
+
+
+    var notified = false;
+    var me = {};
+    me.avatar = " ";
+    var you = {};
+    you.avatar = "";
+
+    // TweenLite.from('.livechat',1,{x:-500,ease:Bounce.easeOut})
+
+    function formatAMPM(date) {
+        var hours = date.getHours();
+        var minutes = date.getMinutes();
+        var ampm = hours >= 12 ? 'PM' : 'AM';
+        hours = hours % 12;
+        hours = hours ? hours : 12; // the hour '0' should be '12'
+        minutes = minutes < 10 ? '0' + minutes : minutes;
+        var strTime = hours + ':' + minutes + ' ' + ampm;
+        return strTime;
+    }
+
+    //-- No use time. It is a javaScript effect.
+    function insertChat(who, text, time) {
+        if (time === undefined) {
+            time = 0;
+        }
+        var control = "";
+        var date = formatAMPM(new Date());
+
+        if (who == "me") {
+            control = '<li style="width:100%">' +
+                '<div class="msj macro">' +
+                '<div><img  src="' + me.avatar + '" /></div>' +
+                '<div class="text text-l">' +
+                '<p>' + text + '</p>' +
+                '<p><small></small></p>' +
+                '</div>' +
+                '</div>' +
+                '</li>';
+
+
+        } else {
+            control = '<li style="width:100%;">' +
+                '<div class="msj-rta rightmacro">' +
+                '<div class="text1 text1-r">' +
+                '<p>' + text + '</p>' +
+                '<p><small1></small1></p>' +
+                '</div>'
+            '</li>';
+        }
+        setTimeout(
+            function () {
+                $(".livechatul").append(control).scrollTop($(".livechatul").prop('scrollHeight'));
+
+                // document.getElementsByTagName('form').setAttribute("id", "democlass");
+                // $("element").attr("class","SomeClass");
+            }, time);
+
+    }
+
+    function resetChat() {
+        $(".livechatul").empty();
+    }
+
+
+
+
+    $(".mytext").on("keydown", function (e) {
+        if (e.which == 13) {
+            if ($(this).val() != '') {
+                var sendmsg = { message: $(this).val() };
+                $(this).val('')
+                $(this).focus();
+                livechat(sendmsg);
+            }
+        }
+    });
+
+
+    $("#send").on("click", function (e) {
+        e.preventDefault();
+        if ($(".mytext").val() != '') {
+            var sendmsg = { message: $(".mytext").val() };
+            $('.mytext').val('');
+            $('.mytext').focus();
+            livechat(sendmsg);
+        }
+
+    });
+
+
+
+    //Live chat call
+    function livechat(sendmsg) {
+
+        var message = sendmsg.message;
+
+
+        $.ajax({
+
+            url: 'http://admin.multimedia5.com:5005/webhooks/rest/webhook',
+            data:{"sender":"f8b7d2b1-87c4-4198-b945-9ae830485a5b", "message":sendmsg.message},
+            type: 'POST',
+            dataType: 'json',
+            success: function (response) {
+                console.log("Rasaresponse", response);
+                if (response.length != 0) {
+                    $(".thinking").parents('.macro').fadeOut();
+                    if (notified == false) {
+                        //insertChat("me", "<div class='intimate'><div class='form-group'></div><div id='contactform'><form method='post'><div class='form-group'><textarea class='textarea' type='text' name='notes' class='forminput' placeholder='Please Enter Email and Message...' autocomplete='off'/></textarea></div><div style='margin-bottom:-6px;'><button class='submit' id='submitEmail'>Submit</button></div></form></div></div>", 100);
+                    }
+                    insertChat("me", response.data, 300);
+                    $(".intimate").parents('.macro').fadeOut();
+                    my_element_jq = $(".intimate");
+                    comment = document.createComment(my_element_jq.get(0).outerHTML);
+                    my_element_jq.replaceWith(comment);
+                    // $("form").style("display","none");
+
+                } else {
+                    insertChat("me", "Say it once again", 100);
+                }
+            },
+            error: function (err) {
+                insertChat("me", "Say it once again", 100);
+            },
+            beforeSend: function () {
+                insertChat("you", sendmsg.message, 100);
+                insertChat("me", "<span class='thinking'>Thinking ...</span>", 100);
+            }
+
+        });
+    }
+
+
+    $('body > div > div > div:nth-child(2) > span').click(function () {
+        $(".mytext").trigger({ type: 'keydown', which: 13, keyCode: 13 });
+    })
+
+    //-- Clear Chat
+    resetChat();
+
+    //-- Print Messages
+    //insertChat("me", "<div class='intimate'><div class='form-group'><b style='font-size:20px;color:black;'>Hi , How can i help you.</b></div><div id='contactform'><form method='post'><div class='form-group'><textarea class='textarea' type='text' name='notes' class='forminput' placeholder='Please Enter Email and Message...' autocomplete='off'/></textarea></div><div style='margin-bottom:-6px;'><button class='submit' id='submitEmail'>Submit</button></div></form></div></div>", 200);
+    insertChat("me", "<span style='width:100px;'>Now , I can understand Multiple language like English, Arabic, Chinese, etc...,</span>", 250);
+
+    //Email/Feedback send
+    window.onload = function () {
+        setTimeout(function () {
+            $('.livechat').css('display', 'block');
+        }, 1000);
+
+        // TweenLite.from('.livechat',1,{x:-500,ease:Power2.easeOut})
+        $('.livechat').on('submit', 'form', function (e) {
+            e.preventDefault();
+            var sendemail = { contactForm: true, projectid: "595ddd93c361ae68ea3bb9e0", clientid: "5a0534028d6a847ea9f180ab", notes: $("textarea[name='notes']").val(), email: "tryclofus@gmail.com" };
+            $.ajax({
+
+                url: 'https://officesuiteapi.clofus.com/api/v1/visitorinfo',
+                data: sendemail,
+                headers: { 'Access-Control-Request-Headers': 'origin, x-requested-with' },
+                type: 'POST',
+                crossDomain: true,
+                dataType: 'json',
+                success: function (response) {
+                    if (response.status == "success") {
+                        notified = true;
+                        my_element_jq = $("form");
+                        comment = document.createComment(my_element_jq.get(0).outerHTML);
+                        my_element_jq.replaceWith(comment);
+                        $(".intimate").parents('.macro').fadeOut();
+                        my_element_jq = $(".intimate");
+                        comment = document.createComment(my_element_jq.get(0).outerHTML);
+                        my_element_jq.replaceWith(comment);
+                        swal({
+                            title: "Thank You!",
+                            text: "We will get back you in 48 hours",
+                            icon: "success",
+                            button: "Ok",
+                        });
+
+                    } else {
+                        notified = false;
+                        swal({
+                            title: "Oops!",
+                            text: "Please, Try again.",
+                            icon: "error",
+                            button: "Ok",
+                        });
+                    }
+
+                },
+                error: function (err) {
+
+                },
+
+
+            });
+        })
+
+
+
+    }
+
+
+
+
+
+
+
+
+    $('#closeoverlay').on('click', function () {
+        $("#overlay").css('display', 'none');
+    })
+
+    // $('#overlay').on('click', function () {
+    //     $("#overlay").css('display', 'none');
+    // })
+
+    $(window).on('click', function (e) {
+        var container = $(".frame");
+        if ($(".livechat").is(":visible")) {
+
+            // if the target of the click isn't the container nor a descendant of the container
+            if (!container.is(e.target) && container.has(e.target).length === 0) {
+                container.hide();
+                $('.livechat').css('display', 'none');
+            }
+
+        } else {
+            $('.livechat').css('display', 'block');
+            $(".frame").show();
+        }
+    });
+
+</script>
