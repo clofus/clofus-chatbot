@@ -896,7 +896,7 @@
 
         $.ajax({
             url: 'https://livechat.clofus.com/livechat?lang=arabic',
-            data:{"sender":"f8b7d2b1-87c4-4198-b945-9ae830485a5b", "message":sendmsg.message},
+            data:JSON.Stringify({"sender":"f8b7d2b1-87c4-4198-b945-9ae830485a5b", "message":sendmsg.message}),
             contentType: "application/json",
             type: 'POST',
             dataType: 'json',
