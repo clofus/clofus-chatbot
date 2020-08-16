@@ -58,3 +58,5 @@ We are open to Contributions from everyone to this project inorder to make this 
 Visit us at [https://clofusinnovations.com](https://clofusinnovations.com)
 
 Visit us at [https://clofus.com](https://clofus.com)
+
+For any queries email me at karthikbalu.meng@gmail.com
